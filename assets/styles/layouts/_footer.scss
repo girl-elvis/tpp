@@ -1,0 +1,13 @@
+footer {
+	background: $brand-10pc;
+	margin: 20px 0;
+	padding: 40px;
+	
+		section.widget {
+			@extend .uk-panel ;
+			@extend .uk-panel-box ;
+			
+		}
+
+	
+}
