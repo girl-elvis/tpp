@@ -20,7 +20,7 @@
 <h2>News</h2><div class="uk-grid uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
 
 <?php
-	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category' => 'news' );
+	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category_name' => 'news', 'post_status' => 'publish' );
 	$postslist = get_posts( $args );
 	foreach ( $postslist as $post ) :
 	  setup_postdata( $post ); ?> 
