@@ -3,6 +3,27 @@
 
 <?php if (is_front_page()){
 	// Get homepage boxes
+?>
+<div class="cat-grid" data-uk-grid-match="{target:'.uk-panel'}">
+
+<?php 
+
+$image = get_field('image');
+$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+
+if( $image ) {
+
+	echo wp_get_attachment_image( $image, $size );
+
+}
+
+?>	    
+
+</div>
+
+	<?php
+
+
 
 }
 
