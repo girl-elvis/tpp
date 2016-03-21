@@ -7,9 +7,6 @@
 // endbower
 
 @import "../../bower_components/uikit/scss/uikit.scss";
-@import "../../bower_components/uikit/scss/components/autocomplete.scss";
-@import "../../bower_components/uikit/scss/components/accordion.scss";
-
 
 @import "common/global";
 @import "components/buttons";
@@ -23,3 +20,4 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+@import "common/tpp-custom";

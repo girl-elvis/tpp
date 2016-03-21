@@ -6,7 +6,87 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #C34A17; // TPP Orange
-$brand-10pc:	#C16634;
+$brand-primary:         #d45d00; // TPP Orange
+$brand-reverse:         #2ba2ff; // TPP Blue
+$brand-success: 		#36b939; // TPP Green
+
+/*$brand-10pc:	#C16634;*/
+
+
+// Typography
+//
+
+$global-color: #333333;
+$global-muted-color: #878785;
+$global-link-color: #2ba2ff; 
+$global-link-hover-color: #2079bf;
+
+// Main fonts
+%calibri {
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+$base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+$navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+
+//
+// Buttons, Navs & Badges
+//
+
+$global-primary-background: #d45d00;
+$global-success-background: #36b939;
+$global-warning-background: #e9ae7f;
+
+//
+// Icon
+//
+
+// $icon-font-path: "../../fonts";
+
+// Navbar
+
+$navbar-background:   none;
+$navbar-nav-hover-background: desaturate( $brand-primary, 20% );
+$navbar-nav-color: #fff;
+$navbar-nav-hover-color: #fff;
+$navbar-color:     #fff;
+$navbar-link-color: #fff;
+$navbar-link-hover-color:    #059 !default;
+
+//
+
+/* NATHAN'S STUFF FOR GLOBAL LATER */
+
+body {
+color: $global-color;
+ @extend %calibri;
+}
+
+/* NAV CUSTOM */
+
+.nav>li, .uk-navbar-nav>li {
+	background: $brand-primary;
+	color:  #fff;
+	&:hover {
+	background: desaturate( $brand-primary, 20% );
+	}
+	a {
+		text-transform: uppercase;
+/*		color: $navbar-nav-color;*/
+	}
+}
+
+#menu-main-navigation li:first-child {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;	
+}
+
+#menu-main-navigation li:last-child {
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
 
 
