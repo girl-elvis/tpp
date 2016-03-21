@@ -1,6 +1,6 @@
 @import "../../bower_components/uikit/scss/uikit-mixins.scss";
 
-@import "common/variables";
+
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
@@ -11,6 +11,8 @@
 @import "../../bower_components/uikit/scss/components/accordion.scss";
 
 
+
+@import "common/variables";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";

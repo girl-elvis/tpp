@@ -14,10 +14,10 @@ $global-link-hover-color: #a83f13;
 // Breakpoints
 //
 
-$breakpoint-small: 481px;
-$breakpoint-medium: 769px;
-$breakpoint-large: 961px;
-$breakpoint-xlarge: 1221px;
+// $breakpoint-small: 481px;
+// $breakpoint-medium: 769px;
+// $breakpoint-large: 961px;
+// $breakpoint-xlarge: 1221px;
 
 //
 // Block
@@ -44,7 +44,8 @@ $navbar-nav-onclick-background: #c44b17;
 	    box-sizing: border-box;	
 	@extend .uk-grid;
 	@extend .uk-grid-match;
-	@extend .uk-grid-width-1-4;
+	@extend .uk-grid-width-medium-1-2;
+	@extend .uk-grid-width-large-1-4;
 	& > * {
 	    box-sizing: border-box;
 	}

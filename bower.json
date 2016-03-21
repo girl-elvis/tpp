@@ -9,5 +9,13 @@
   "dependencies": {
     "uikit": "^2.25.0"
   },
-  "overrides": {}
+  "overrides": {
+    "uikit": {
+      "main": [
+      "./js/uikit.js",
+      "./js/components/accordion.js",
+      "./js/components/autocomplete.js"
+      ]
+    }
+  }
 }

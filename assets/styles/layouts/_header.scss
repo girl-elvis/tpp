@@ -4,6 +4,7 @@ nav {
 
 .nav {
 	@extend .uk-navbar-nav;
+	@extend .uk-hidden-small;
 }
 .brand{
 	//@extend .uk-navbar-brand;
