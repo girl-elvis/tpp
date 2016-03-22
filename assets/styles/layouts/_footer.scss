@@ -1,11 +1,12 @@
 footer {
-	/*background: $brand-10pc;
-	margin: 20px 0;
-	padding: 40px;*/
-	
+
+		.cat-col:last-of-type{
+			@extend .uk-width-large-1-2;
+		}
 		section.widget {
 			@extend .uk-panel ;
 			@extend .uk-panel-box ;
+			// replace with @extend .cat-panel?
 			
 		}
 
