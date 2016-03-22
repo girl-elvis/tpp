@@ -5,12 +5,49 @@ $icon-font-path:        "../fonts/";
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
+.container {
+	@extend .uk-container-center;
+}
+
 // Colors
 $brand-primary:         #d45d00; // TPP Orange
-$brand-reverse:         #2ba2ff; // TPP Blue
+$brand-secondary: invert($brand-primary);
+/*$brand-reverse:         #2ba2ff; // TPP Blue*/
 $brand-success: 		#36b939; // TPP Green
+$light-grey: 			#e6e6e6;
+$dark-grey: 			#878785;
+$white:					#fff;
 
-/*$brand-10pc:	#C16634;*/
+
+
+
+$brand-light: lighten( $brand-primary, 4 );
+$brand-lightest: lighten( $brand-primary, 10 );
+
+%texture-background {
+background-image: url('../images/textures/diagonal-noise.png');
+background-repeat: repeat;
+ background-blend-mode: multiply;	
+}
+
+%orange-crush {
+	@extend %texture-background;
+	background-color: lighten($brand-primary, 5%);
+	color: $white;
+}
+
+%grey-blanket {
+	@extend %texture-background;
+	background-color: lighten($dark-grey, 5%);
+	color: $dark-grey;
+}
+
+
+
+// Base
+
+$base-link-color: $brand-secondary;
+$base-link-hover-text-decoration: none;
 
 
 // Typography
@@ -20,6 +57,8 @@ $global-color: #333333;
 $global-muted-color: #878785;
 $global-link-color: #2ba2ff; 
 $global-link-hover-color: #2079bf;
+
+/*&#36;bf-orange: #ff9900;*/
 
 // Main fonts
 %calibri {
@@ -48,15 +87,32 @@ $global-warning-background: #e9ae7f;
 
 // Navbar
 
-$navbar-background:   none;
-$navbar-nav-hover-background: desaturate( $brand-primary, 20% );
+$navbar-background:  none;
+$navbar-nav-hover-background: $brand-light;
 $navbar-nav-color: #fff;
 $navbar-nav-hover-color: #fff;
 $navbar-color:     #fff;
-$navbar-link-color: #fff;
-$navbar-link-hover-color:    #059 !default;
+$navbar-link-color: $brand-light;
+/*$navbar-link-hover-color:    #059 !default;*/
+
+
+/*.swatch-base:nth-child(2) {
+background-color: tint( $base-color, 20% ); 
+}*/
 
 //
+
+/* GRID STUFF */
+
+$control-height: 265px;
+$radius: 4px;
+
+
+/* FONT STUFF */
+
+$font-size: 16px;
+$line-height: $font-size * 1.6;
+$h1-size: $font-size * 2; // all other fonts are related to $font-size.
 
 /* NATHAN'S STUFF FOR GLOBAL LATER */
 
@@ -67,26 +123,94 @@ color: $global-color;
 
 /* NAV CUSTOM */
 
-.nav>li, .uk-navbar-nav>li {
-	background: $brand-primary;
-	color:  #fff;
-	&:hover {
-	background: desaturate( $brand-primary, 20% );
-	}
+ .nav>li, .uk-navbar-nav>li &:hover,
+ .uk-navbar-flip>li &:hover {
+	/*background-color: $brand-lightest;*/
+	@extend %orange-crush;
 	a {
 		text-transform: uppercase;
 /*		color: $navbar-nav-color;*/
 	}
 }
 
-#menu-main-navigation li:first-child {
-	border-bottom-left-radius: 3px;
-	border-top-left-radius: 3px;	
+ .nav>li, .uk-navbar-nav>li {
+ /*	color:  #fff;*/
+ 	background-color: lighten($brand-primary, 5%);
+ 	&:hover {
+ 	background-color: lighten($brand-primary, 15%);
+ 	}
+ }
+
+
+.nav-primary li:first-child, &:first-child:hover {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;		
 }
 
-#menu-main-navigation li:last-child {
-	border-bottom-right-radius: 3px;
-	border-top-right-radius: 3px;
+.nav-primary li:last-child, &:last-child:hover {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+.uk-navbar-flip>li {
+	background-color: lighten($light-grey, 5%);
+	&>a {
+	color: $global-muted-color;
+	}
+}
+
+.nav>li>a:active, .uk-navbar-nav>li>a:active {
+	background-color: darken($light-grey, 5%);
+	color: $dark-grey;
+}
+
+/* BUTTONS */
+
+%cta {
+	background: $brand-secondary;
+	border-radius: $radius;
+	color: $white;
+	padding: 0.5em 6.5%;
+	text-transform: uppercase;
+	&:hover {
+	text-decoration: none;
+	}
+	
 }
 
 
+.button {
+	@extend %cta;
+	&:hover {
+	background-color: darken($brand-secondary, 10%);
+	color: $white;
+	/*background-color: scale-color($brand-primary, $lightness: –10%);*/
+	}
+}
+
+/* PANELS */
+
+$panel-box-primary-background:        #f8f8f8;
+$panel-box-background: none;
+$panel-box-color: $white;
+
+.uk-panel-box-primary {
+	@extend %texture-background;
+}
+
+footer {
+	@extend %orange-crush;
+	a {
+	color:$white;
+	}
+	ul {
+		padding-left: 0;
+	}
+	li {
+		list-style: none;
+		
+	}
+	h3 {
+		color: $white;
+	}
+}
