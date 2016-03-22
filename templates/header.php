@@ -24,7 +24,7 @@
 <!-- Phone menu -->
 
 
-    <nav class="nav-primary">
+    <nav class="nav-primary uk-navbar">
       <?php
       if (has_nav_menu('primary_navigation')) :
         wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);

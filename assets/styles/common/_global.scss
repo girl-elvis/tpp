@@ -12,9 +12,17 @@
 	& > * {
 	    box-sizing: border-box;
 	}
+	.cat-half{
+			@extend .uk-width-large-1-2;
+	}
 }
 
 
+.cat-panel{
+	@extend .uk-panel;
+	@extend .uk-panel-box;
+	@extend .uk-panel-box-primary;
+}
 
 .container {
 	@extend .uk-container;
