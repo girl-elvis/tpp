@@ -14,9 +14,10 @@ $brand-primary:         #d45d00; // TPP Orange
 $brand-secondary: invert($brand-primary);
 /*$brand-reverse:         #2ba2ff; // TPP Blue*/
 $brand-success: 		#36b939; // TPP Green
+
 $light-grey: 			#e6e6e6;
 $dark-grey: 			#878785;
-$white:					#fff;
+$white:					#f7f7f7;
 
 
 
@@ -33,6 +34,12 @@ background-repeat: repeat;
 %orange-crush {
 	@extend %texture-background;
 	background-color: lighten($brand-primary, 5%);
+	color: $white;
+}
+
+%blue-crush {
+	@extend %texture-background;
+	background-color: lighten($brand-secondary, 5%);
 	color: $white;
 }
 
@@ -79,11 +86,17 @@ $global-primary-background: #d45d00;
 $global-success-background: #36b939;
 $global-warning-background: #e9ae7f;
 
-//
-// Icon
-//
+a {
+	transition: all .1s ease-in-out;
+/*	&:hover {
+	transition: all .2s ease-in-out;
+	}*/
+}
 
-// $icon-font-path: "../../fonts";
+
+// Icon
+
+
 
 // Navbar
 
@@ -121,10 +134,35 @@ color: $global-color;
  @extend %calibri;
 }
 
+.banner {
+	padding: 18px 0;
+}
+
+a.brand {
+	font-size: 1.8em;
+	color: $dark-grey;
+}
+
+.banner .container:before {
+    content: url('../images/tpp-logo.png');
+    margin: -8px 0 0 -58px;
+    position: absolute;
+}
+
+.strapline {
+	font-size: 1.3em;
+	color: $light-grey;
+}
+
 /* NAV CUSTOM */
 
- .nav>li, .uk-navbar-nav>li &:hover,
- .uk-navbar-flip>li &:hover {
+$navbar-nav-hover-background: $dark-grey;
+$navbar-nav-onclick-background: $navbar-nav-hover-background;
+$navbar-nav-onclick-color: $white;
+
+
+ .nav>li, .uk-navbar-nav>li,
+ .uk-navbar-flip>li {
 	/*background-color: $brand-lightest;*/
 	@extend %orange-crush;
 	a {
@@ -133,23 +171,44 @@ color: $global-color;
 	}
 }
 
- .nav>li, .uk-navbar-nav>li {
- /*	color:  #fff;*/
- 	background-color: lighten($brand-primary, 5%);
- 	&:hover {
- 	background-color: lighten($brand-primary, 15%);
- 	}
+.nav>li>a, .uk-navbar-nav>li>a,
+.nav>li>a:active, .uk-navbar-nav>li>a:active,
+ .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
+
+    display: inline;
+    padding: 7px 16px;
+    &:hover {
+    display: inline;
+    padding: 7px 16px;
+    }
+    }
+    
+ .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
+ 	@extend %texture-background;
  }
+ 
+
+.uk-navbar-flip.nav>li>a {
+	color: $dark-grey;
+}
 
 
 .nav-primary li:first-child, &:first-child:hover {
 	border-bottom-left-radius: $radius;
-	border-top-left-radius: $radius;		
+	border-top-left-radius: $radius;	
+}
+
+.nav-primary li:first-child {
+	padding-left: 3px;
 }
 
 .nav-primary li:last-child, &:last-child:hover {
 	border-bottom-right-radius: $radius;
 	border-top-right-radius: $radius;
+}
+
+.nav-primary li:last-child {
+	padding-right: 3px;
 }
 
 .uk-navbar-flip>li {
@@ -182,7 +241,7 @@ color: $global-color;
 .button {
 	@extend %cta;
 	&:hover {
-	background-color: darken($brand-secondary, 10%);
+	background-color: darken($brand-secondary, 30%);
 	color: $white;
 	/*background-color: scale-color($brand-primary, $lightness: –10%);*/
 	}
@@ -202,6 +261,10 @@ footer {
 	@extend %orange-crush;
 	a {
 	color:$white;
+	padding: 3px 6px;
+	&:hover {
+	@extend %blue-crush;
+}
 	}
 	ul {
 		padding-left: 0;
