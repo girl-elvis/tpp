@@ -11,7 +11,7 @@
 			<?php 
 
 			$image = get_field('image');
-			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+			$size = 'cat-double'; 
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );
 			}
@@ -28,13 +28,13 @@
 
 		 	// loop through the rows of data
 		    while ( have_rows('boxes') ) : the_row();
-			echo "<div><div class='cat-panel'>";
+			echo "<div><div class='cat-panel'><h3 class='uk-panel-title'>";
 		        // display a sub field value
 		        the_sub_field('title');
-
-		  //       if( get_field( 'menu' ) ) : 
-				// 	echo "menu" ; //the_field( 'menu' ); 
-				// endif; 
+		    echo "</h3>";
+		        if( get_sub_field( 'menu' ) ) : 
+					the_sub_field( 'menu' ); 
+				endif; 
 
 			echo "</div></div>";
 		    endwhile;
@@ -84,7 +84,7 @@
 	    </div>
 			
 			<?php 
-			echo ("<a href='" . get_the_permalink() . "'>" . get_the_title() . "</a>");
+			echo ("<h4><a href='" . get_the_permalink() . "'>" . get_the_title() . "</a></h4>");
 			
 			?>   
 			

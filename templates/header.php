@@ -2,10 +2,10 @@
   <div class="container">
 
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-
+    <div class="strapline"><?php bloginfo('description'); ?></div>
 
 <!-- Phone menu -->
-    <button class="uk-button" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button>
+    <button class="uk-button uk-float-right uk-visible-small" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button>
     <div class="uk-offcanvas" id="mobmenu">
     <nav class="uk-offcanvas-bar uk-offcanvas-bar-flip">
       <?php
@@ -42,4 +42,4 @@
 </header>
 
 <?php if ( function_exists('yoast_breadcrumb') ) 
-{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+{yoast_breadcrumb('<div id="breadcrumbs" class="container">','</div>');} ?>
