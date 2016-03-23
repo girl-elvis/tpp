@@ -1,7 +1,12 @@
 
 /* theme: Default */
 
-
+table {
+	@extend .uk-table;
+}
+button {
+	@extend .uk-button;
+}
 
 .cat-grid{
 	    box-sizing: border-box;	
