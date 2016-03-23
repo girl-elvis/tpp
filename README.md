@@ -91,3 +91,4 @@ From the command line:
 2. Navigate to the theme directory, then run `npm install`
 3. Run `bower install`
 
+blah blah blah.
