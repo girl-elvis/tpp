@@ -34,3 +34,21 @@ uploads/
 upgrade/
 wp-cache-config.php
 themes/twenty*
+
+
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+dist
+bower_components
+node_modules
+npm-debug.log
+.editorconfig
+.jscsrc
+.jshintrc
+.travis.yml
+CHANGELOG.md
+composer.json
+CONTRIBUTING.md
+pathology.sublime-project
+pathology.sublime-workspace
+ruleset.xml
