@@ -32,7 +32,7 @@
 $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 
 @each $i in $icons {
-  li.#{$i} h3 a{
+  li.#{$i} i {
     @extend .uk-icon-#{$i};
     font-family: FontAwesome;
   }
