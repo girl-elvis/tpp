@@ -40,9 +40,8 @@ foreach ( $lastposts as $post ) {
 
     $this_char = strtoupper(mb_substr($post->post_title, 0, 1, 'UTF-8'));
 
-    if ( $this_char != $state['letter'] ) {					// letter has changed
-        $state['letter'] = $this_char;						// so update the current letter to the new one
-
+    if ( $this_char != $state['letter'] ) {	 // the post title first letter has changed!
+        $state['letter'] = $this_char;		 // so update the current letter to the new one
 
         // Loop to handle occasions when you have no entries for a letter
         while ( $state['letter'] > $state['nextLetter'] ) {  // is the current letter beyond the next letter we were expecting (alphabetically) ?
@@ -56,6 +55,9 @@ foreach ( $lastposts as $post ) {
 
         if($state['letter'] == $state['nextLetter'] ) {
         	$state['nextLetter']++;  // if the while loop just ran we need to increment the next expected letter 1 more...
+            // in some languages this is called a while...else loop. The reason is we need letter and nextletter to be equal to
+            // exit the while loop (when we're cought up accounting for letters that have no entries) but then we need to move
+            // the next letter on one to use it for the next occasion
         }
 
         // normal situation when new first letter matches expected next letter
