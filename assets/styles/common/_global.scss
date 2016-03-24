@@ -1,5 +1,10 @@
 
-/* theme: Default */
+/* use this when extending a uikit grid style */
+%borderbox{
+	box-sizing: border-box;
+    //width: 100%;
+}
+
 
 table {
 	@extend .uk-table;
@@ -9,29 +14,29 @@ button {
 }
 
 .cat-grid {
-	    box-sizing: border-box;	
+	@extend %borderbox;
 	@extend .uk-grid;
 	@extend .uk-grid-match;
 	@extend .uk-grid-width-medium-1-2;
 	@extend .uk-grid-width-large-1-4;
 	& > * {
-	    box-sizing: border-box;
+	    @extend %borderbox;
 	}
 	.cat-half {
+		@extend .uk-width-1-1;
+			@extend .uk-width-medium-1-1;
 			@extend .uk-width-large-1-2;
 	}
 }
 
 
-.cat-panel, .pagenav li {
+.cat-panel, .pagenav li{
 	@extend .uk-panel;
 	@extend .uk-panel-box;
-<<<<<<< HEAD
 	//@extend .uk-panel-box-primary;
-=======
-	// @extend .uk-panel-box-primary;
->>>>>>> b9096a5ccae89117913234303e4947001765c780
+
 }
+
 
 .container {
 	@extend .uk-container;
