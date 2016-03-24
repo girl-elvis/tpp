@@ -26,7 +26,7 @@ button {
 .cat-panel, .pagenav li{
 	@extend .uk-panel;
 	@extend .uk-panel-box;
-	@extend .uk-panel-box-primary;
+	//@extend .uk-panel-box-primary;
 }
 
 .container {
@@ -41,4 +41,23 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
     @extend .uk-icon-#{$i};
     font-family: FontAwesome;
   }
+}
+
+
+.uk-accordion {
+	div {
+		box-sizing: border-box;
+	}
+	.uk-accordion-content {
+		@extend .uk-grid;
+		.data-title{
+			@extend .uk-width-1-10;
+		}
+		.data-definition{
+			@extend .uk-width-9-10;
+		}
+
+
+	}
+
 }

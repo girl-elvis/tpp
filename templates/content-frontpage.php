@@ -28,7 +28,7 @@
 
 		 	// loop through the rows of data
 		    while ( have_rows('boxes') ) : the_row();
-			echo "<div><div class='cat-panel'><h3 class='uk-panel-title'>";
+			echo "<div><div class='cat-panel cat-panel-primary'><h3 class='uk-panel-title'>";
 			echo "<i class='uk-icon-" . get_sub_field( 'icon' )   ."'></i>";
 		        // display a sub field value
 		        the_sub_field('title');
