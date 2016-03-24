@@ -8,7 +8,7 @@ button {
 	@extend .uk-button;
 }
 
-.cat-grid{
+.cat-grid {
 	    box-sizing: border-box;	
 	@extend .uk-grid;
 	@extend .uk-grid-match;
@@ -17,16 +17,16 @@ button {
 	& > * {
 	    box-sizing: border-box;
 	}
-	.cat-half{
+	.cat-half {
 			@extend .uk-width-large-1-2;
 	}
 }
 
 
-.cat-panel, .pagenav li{
+.cat-panel, .pagenav li {
 	@extend .uk-panel;
 	@extend .uk-panel-box;
-	@extend .uk-panel-box-primary;
+	// @extend .uk-panel-box-primary;
 }
 
 .container {

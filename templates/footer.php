@@ -1,6 +1,6 @@
 <footer class="content-info">
   <div class="container">
-  	<div>The Pathology Partnership is an NHS pathology provider </div>
+  	<div class="strapline"><?php bloginfo('description'); ?></div>
   	<div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
     <?php dynamic_sidebar('sidebar-footer'); ?>
     </div>
