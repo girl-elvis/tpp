@@ -6,6 +6,7 @@
 
 <!-- Phone menu -->
     <button class="uk-button uk-float-right uk-visible-small" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button>
+
     <div class="uk-offcanvas" id="mobmenu">
     <nav class="uk-offcanvas-bar uk-offcanvas-bar-flip">
       <?php
@@ -16,10 +17,11 @@
 
       <?php
       if (has_nav_menu('right_navigation')) :
-        wp_nav_menu(['theme_location' => 'right_navigation', 'menu_class' => 'uk-offcanvas-bar']);
+        wp_nav_menu(['theme_location' => 'right_navigation',  'items_wrap' => '<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>%3$s</ul>']);
       endif;
       ?>
     </nav>
+
   </div>
 <!-- Phone menu -->
 
