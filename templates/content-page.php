@@ -39,3 +39,38 @@ wp_reset_postdata();?>
 
 	 
 <?php } ?>
+
+<?php if (is_page("going-for-a-bloodtest") ){ ?>
+
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('tabs') ):
+	echo '<ul class="uk-tab" data-uk-tab>';
+ 	// loop through the rows of data
+    while ( have_rows('tabs') ) : the_row();
+
+        // display a sub field value
+        the_sub_field('tab_title');
+the_sub_field('tab_text');
+    endwhile;
+	echo '</ul>';
+else :
+
+    // no rows found
+
+endif;
+
+?>
+
+
+
+
+
+    <li class="uk-active"><a href="">...</a></li>
+    <li><a href="">...</a></li>
+    <li><a href="">...</a></li>
+    <li class="uk-disabled"><a href="">...</a></li>
+
+
+<?php } ?>
