@@ -1,4 +1,4 @@
-// Glyphicons font path
+// Glyphicons font path - ICON FONTS IN DIST! Thsi path breaks the UK bower path :-)
 $icon-font-path:        "../fonts/";
 
 // Grid settings
@@ -6,26 +6,33 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 .container {
-	@extend .uk-container-center;
+	@extend .uk-container-center; // centres things
 }
+
+
+// GRID STUFF */
+
+$control-height: 265px;
+$radius: 4px;
+
+
 
 // Colors
 $brand-primary:         #d45d00; // TPP Orange
-$brand-secondary: invert($brand-primary);
-/*$brand-reverse:         #2ba2ff; // TPP Blue*/
+$brand-secondary: invert($brand-primary); // TPP Blue
 $brand-success: 		#36b939; // TPP Green
 
-$light-grey: 			#e6e6e6;
-$dark-grey: 			#878785;
+$light-neutral: 		#e6e6e6;
+$dark-neutral: 			#878785;
+
 $white:					#f7f7f7;
-
-
 
 
 $brand-light: lighten( $brand-primary, 4 );
 $brand-lightest: lighten( $brand-primary, 10 );
 
-%texture-background {
+
+%texture-background { // not used alone, use orange crush, blue crush or grey blanket for effects.
 background-image: url('../images/textures/diagonal-noise.png');
 background-repeat: repeat;
  background-blend-mode: multiply;	
@@ -45,8 +52,8 @@ background-repeat: repeat;
 
 %grey-blanket {
 	@extend %texture-background;
-	background-color: lighten($dark-grey, 5%);
-	color: $dark-grey;
+	background-color: lighten($dark-neutral, 5%);
+	color: $dark-neutral;
 }
 
 
@@ -60,12 +67,28 @@ $base-link-hover-text-decoration: none;
 // Typography
 //
 
+@mixin gradient-horizontal-primary($start-color: $brand-primary, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+
+@mixin gradient-horizontal-neutral($start-color: $light-neutral, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
 $global-color: #333333;
 $global-muted-color: #878785;
 $global-link-color: #2ba2ff; 
 $global-link-hover-color: #2079bf;
 
-/*&#36;bf-orange: #ff9900;*/
 
 // Main fonts
 %calibri {
@@ -78,6 +101,7 @@ $global-link-hover-color: #2079bf;
 $base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 
+
 //
 // Buttons, Navs & Badges
 //
@@ -88,46 +112,153 @@ $global-warning-background: #e9ae7f;
 
 a {
 	transition: all .1s ease-in-out;
-/*	&:hover {
-	transition: all .2s ease-in-out;
-	}*/
+//	&:hover { transition: all .2s ease-in-out; }
 }
 
+// Headers 
+$base-h1-line-height: 1.8em;
+$base-heading-color: 	#727270;
 
-// Icon
+h1::after {
+	content: '';
+	display: block;
+	height:  5px;
+	@include gradient-horizontal-primary;
+}
 
+h2::after {
+	content: '';
+	display: block;
+	height:  5px;
+	@include gradient-horizontal-neutral;
+}
 
+// NAVBAR
 
-// Navbar
+// Navbar links
 
-$navbar-background:  none;
+$navbar-background:  #ff0000;
 $navbar-nav-hover-background: $brand-light;
-$navbar-nav-color: #fff;
+$navbar-nav-color: #ff0000;
 $navbar-nav-hover-color: #fff;
 $navbar-color:     #fff;
 $navbar-link-color: $brand-light;
-/*$navbar-link-hover-color:    #059 !default;*/
+// $navbar-nav-font-weight: bold;
 
 
-/*.swatch-base:nth-child(2) {
-background-color: tint( $base-color, 20% ); 
-}*/
+%navbar-a {
+	display: inline;
+	padding: 7px 16px;
+	text-transform: uppercase;
+}
+
+// Navbar Mixins
+
+@mixin navbarColours($extend: true) {
+  @if $extend {
+    @extend %navbarColours;
+  }
+  @else {
+    @extend %orange-crush;
+  }
+}
+
+%navbarColours {
+  @include navbarColours($extend: false);
+  @extend %orange-crush;
+}
+
+
+// Navbar brand
+
+
+
+$navbar-brand-color: $dark-neutral;
+$navbar-brand-hover-color: $dark-neutral;
+
+a.brand {
+	// @extend .uk-navbar-brand;
+	color: $navbar-brand-color;
+}
+
+
+.uk-navbar-nav li {
+	// @include hook-navbar-nav;
+	@include navbarColours
+
+}
+
+.nav>li>a, .uk-navbar-nav>li>a,
+.nav>li>a:active, .uk-navbar-nav>li>a:active,
+ .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
+	@extend %navbar-a;
+	//&:hover {
+	//@extend %texture-background;
+	//background: $navbar-nav-hover-background;
+	
+	//}
+}
+
+.nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus,
+.nav>li>a:active, .uk-navbar-nav>li>a:active {
+	@extend %texture-background;
+	border-radius: $radius;
+}
+
+
+$navbar-background: none; // whole bar
+$navbar-nav-color: $white; // nav li a link text colour
+$navbar-nav-hover-color: $navbar-nav-color; // nav li a hover color
+$navbar-nav-hover-background: none; // nav li a hover bg
+$navbar-nav-onclick-background: $navbar-nav-hover-background;
+$navbar-nav-onclick-color: $navbar-nav-color;
+
+
+.nav-primary ul li:first-child, &:first-child:hover, &:first-child:active {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;	
+}
+
+.nav-primary ul li:first-child {
+	padding-left: 3px;
+}
+
+.nav-primary ul li:last-child, &:last-child:hover, &:last-child:active  {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+.nav-primary ul li:last-child {
+	padding-right: 3px;
+}
+
+.uk-navbar-flip>li {
+	background-color: lighten($light-neutral, 5%);
+}
+
+.uk-navbar-flip li a {
+color: $dark-neutral;
+&:hover {
+@extend %blue-crush;
+	}	
+}
+
+.uk-navbar-flip>li>a:hover {
+	// @extend %blue-crush;
+	
+}
+
 
 //
 
-/* GRID STUFF */
 
-$control-height: 265px;
-$radius: 4px;
-
-
-/* FONT STUFF */
+// FONT STUFF
 
 $font-size: 16px;
 $line-height: $font-size * 1.6;
 $h1-size: $font-size * 2; // all other fonts are related to $font-size.
 
-/* NATHAN'S STUFF FOR GLOBAL LATER */
+// NATHAN'S STUFF FOR GLOBAL LATER
 
 body {
 color: $global-color;
@@ -140,7 +271,7 @@ color: $global-color;
 
 a.brand {
 	font-size: 1.8em;
-	color: $dark-grey;
+	// color: $dark-neutral;
 }
 
 .banner .container:before {
@@ -150,78 +281,17 @@ a.brand {
 }
 
 .strapline {
-	font-size: 1.3em;
-	color: $light-grey;
+	font-size: 1.1em;
+	line-height: 1.8em;
+	color: $light-neutral;
+	padding-bottom: 10px;
 }
 
-/* NAV CUSTOM */
-
-$navbar-nav-hover-background: $dark-grey;
-$navbar-nav-onclick-background: $navbar-nav-hover-background;
-$navbar-nav-onclick-color: $white;
-
-
- .nav>li, .uk-navbar-nav>li,
- .uk-navbar-flip>li {
-	/*background-color: $brand-lightest;*/
-	@extend %orange-crush;
-	a {
-		text-transform: uppercase;
-/*		color: $navbar-nav-color;*/
-	}
+.banner .strapline::after {
+	display: block;
+	padding-bottom: 12px;
 }
 
-.nav>li>a, .uk-navbar-nav>li>a,
-.nav>li>a:active, .uk-navbar-nav>li>a:active,
- .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
-
-    display: inline;
-    padding: 7px 16px;
-    &:hover {
-    display: inline;
-    padding: 7px 16px;
-    }
-    }
-    
- .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
- 	@extend %texture-background;
- }
- 
-
-.uk-navbar-flip.nav>li>a {
-	color: $dark-grey;
-}
-
-
-.nav-primary li:first-child, &:first-child:hover {
-	border-bottom-left-radius: $radius;
-	border-top-left-radius: $radius;	
-}
-
-.nav-primary li:first-child {
-	padding-left: 3px;
-}
-
-.nav-primary li:last-child, &:last-child:hover {
-	border-bottom-right-radius: $radius;
-	border-top-right-radius: $radius;
-}
-
-.nav-primary li:last-child {
-	padding-right: 3px;
-}
-
-.uk-navbar-flip>li {
-	background-color: lighten($light-grey, 5%);
-	&>a {
-	color: $global-muted-color;
-	}
-}
-
-.nav>li>a:active, .uk-navbar-nav>li>a:active {
-	background-color: darken($light-grey, 5%);
-	color: $dark-grey;
-}
 
 /* BUTTONS */
 
@@ -237,25 +307,31 @@ $navbar-nav-onclick-color: $white;
 	
 }
 
-
 .button {
 	@extend %cta;
 	&:hover {
 	background-color: darken($brand-secondary, 30%);
 	color: $white;
-	/*background-color: scale-color($brand-primary, $lightness: –10%);*/
+	// background-color: scale-color($brand-primary, $lightness: –10%);
 	}
 }
 
-/* PANELS */
+// PANELS
 
-$panel-box-primary-background:        #f8f8f8;
+$panel-box-primary-background:        $brand-primary;
 $panel-box-background: none;
 $panel-box-color: $white;
 
-.uk-panel-box-primary {
-	@extend %texture-background;
+
+
+.uk-panel-box-primary,
+.cat-panel {
+	@extend %orange-crush;
 }
+
+/*.uk-panel {
+	@extend %orange-crush;
+}*/
 
 footer {
 	@extend %orange-crush;
@@ -277,3 +353,64 @@ footer {
 		color: $white;
 	}
 }
+
+// ACCORDIONS & ASSORTED INSTRUMENTS
+
+// $accordion-title-margin-bottom:                  15px !default;
+// $accordion-title-padding-vertical:               5px !default;
+// $accordion-title-padding-horizontal:             15px !default;
+$accordion-title-font-size:                      18px !default;
+// $accordion-title-line-height:                    24px !default;
+$accordion-title-background:                     $light-neutral;
+
+//$accordion-content-padding-horizontal:           $accordion-title-padding-horizontal !default;
+//$accordion-content-padding-bottom:               $accordion-title-padding-horizontal !default;
+
+.uk-accordion-title {
+	
+}
+
+// TABS
+
+%tabs {
+	border-radius: $radius $radius 0 0;
+}
+
+$tab-border: $brand-light;
+$tab-border-width: 3px;
+
+$tab-color: $global-color;
+$tab-hover-color: $tab-color;
+
+$tab-hover-background: $light-neutral;
+$tab-active-background: $brand-light;
+$tab-active-border: $tab-active-background;
+$tab-active-color: $white;
+$tab-hover-border:  $light-neutral;         
+$tab-hover-background: $light-neutral;
+
+@mixin hook-tab(){
+// @extend %orange-crush;
+}
+@mixin hook-tab-hover(){}
+@mixin hook-tab-active(){}
+@mixin hook-tab-disabled(){}
+@mixin hook-tab-misc(){}
+
+.uk-tab li a {
+	font-size: 1.3em;
+	// background: $tab-hover-background;
+	@extend %tabs;
+	&:hover {
+	@extend %tabs;
+	}
+}
+
+.uk-active h2 {
+	margin-top: 12px;
+	&::after {
+	background:  none;
+	}
+}
+
+
