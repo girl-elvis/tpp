@@ -38,6 +38,22 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    'a_z_of_tests': {
+      init: function() {
+        // we have to open and scroll to the accordion entry
+        // ui kit doesn't seem to include that functionality
+        $('.name_directory_index').click(function(e){
+          var $clicked       = $(e.target);
+          var letter         = $clicked.html();
+          var letterNum      = ($clicked.index()) + 1; // zero indexed!
+          var pixelsToScroll = $("h3[name='entry_"+letter+"']").offset().top;
+
+          $('.uk-accordion h3:nth-of-type('+letterNum+')').trigger('click'); // not zero indexed!
+          $('body').animate({scrollTop: pixelsToScroll}, 1000);
+        });
+
+      }
     }
   };
 

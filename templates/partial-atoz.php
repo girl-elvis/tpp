@@ -10,11 +10,10 @@
 
     foreach($index_letters as $index_letter)
     {
-        echo ' <a class="accordian_opener" href="' . $letter_url . urlencode($index_letter) . '">' . strtoupper($index_letter) . '</a>  | ';
+        echo ' <a class="accordian_opener" href="#">' . strtoupper($index_letter) . '</a>  | ';
     }
     echo '</div>';
 ?>
-
 
 <div class="uk-accordion" data-uk-accordion>
 <?php
@@ -46,7 +45,7 @@ foreach ( $lastposts as $post ) {
         // Loop to handle occasions when you have no entries for a letter
         while ( $state['letter'] > $state['nextLetter'] ) {  // is the current letter beyond the next letter we were expecting (alphabetically) ?
             if($state['needsclose'] == true) { echo '</div>'; $state['needsclose'] = false; } // yes, close the accordian content if it was open
-            echo '<h3 class="uk-accordion-title">' . $state['nextLetter'] . "</h3>\r";  // then print the accordian title for the current letter
+            echo "<h3 class='uk-accordion-title' name='entry_{$state['nextLetter']}'>" . $state['nextLetter'] . "</h3>\r";  // then print the accordian title for the current letter
         	echo '<div class="uk-accordion-content">'; // print accordian content saying 'nothing here'
             echo '  <div class="data-definition">There is nothing here</div>';
             $state['needsclose'] = true; // remember to say that you just opened the accordian content div
@@ -62,7 +61,7 @@ foreach ( $lastposts as $post ) {
 
         // normal situation when new first letter matches expected next letter
         if($state['needsclose'] == true) { echo '</div>'; $state['needsclose'] = false; } // close the accordian content if it is open
-        echo '<h3 class="uk-accordion-title">' . $this_char . '</h3>';  // print accordian title
+        echo "<h3 class='uk-accordion-title' name='entry_{$this_char}'>" . $this_char . '</h3>';  // print accordian title
         echo '<div class="uk-accordion-content">';                      // open the accordian content div
         $state['needsclose'] = true;
     }
