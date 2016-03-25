@@ -1,7 +1,7 @@
 
 <?php // ADD Section header if needed ?>
 
-<?php if (is_front_page()){
+
 	// Get homepage boxes
 ?>
 <div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
@@ -52,7 +52,6 @@
 </div>
 	<?php
 
-}
 
 ?>
 
@@ -61,7 +60,7 @@
 
 <?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
 
-<?php if (is_front_page()){
+
 	// News Loop of 4
 	?>
 
@@ -95,7 +94,6 @@
 	wp_reset_postdata();
 
 	
-}
 ?>
 </div>
 

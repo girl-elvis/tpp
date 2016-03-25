@@ -4,73 +4,24 @@
 <?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
 
 
-
-
-<?php if (is_page("staff") ){ ?>
-	
-
-<ul class="newspanels uk-grid uk-grid-match uk-grid-width-medium-1-3">
 <?php
+if (is_page("a-z-of-tests") ){
+    	$post_type = "jargon";
+    	include(locate_template('templates/partial-atoz.php'));
+}
 
+if (is_page("partners") ){
+	 $menuParameters = array(
+		'menu' => 'Partners', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'partners',		
+		);     
+    echo (wp_nav_menu( $menuParameters ) );
+}
 
-$args = array( 'posts_per_page' => 6, 'category' => 5 );
+if (is_page("staff") ){ // Adds Staff News to page. 	
+   	include(locate_template('templates/partial-staffnews.php'));
+} 
 
-$myposts = get_posts( $args );
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-	<li><div class="cat-panel">
-		<div class="uk-panel-teaser">
-				<?php 
-		        if ( has_post_thumbnail() ) {
-
-					    the_post_thumbnail( 'cat-double' );
-					} 
-					
-
-	    echo ("</div><h4><a href='" . get_the_permalink() . "'>" . get_the_title() . "</a></h4>");
-	    ?>
-	</div></li>
-<?php endforeach; 
-wp_reset_postdata();?>
-
-</ul>
-
-
-
-
-	 
-<?php } ?>
-
-<?php if (is_page("going-for-a-bloodtest") ){ ?>
-
-<?php
-
-// check if the repeater field has rows of data
-if( have_rows('tabs') ):
-	echo '<ul class="uk-tab" data-uk-tab>';
- 	// loop through the rows of data
-    while ( have_rows('tabs') ) : the_row();
-
-        // display a sub field value
-        the_sub_field('tab_title');
-the_sub_field('tab_text');
-    endwhile;
-	echo '</ul>';
-else :
-
-    // no rows found
-
-endif;
-
-?>
-
-
-
-
-
-    <li class="uk-active"><a href="">...</a></li>
-    <li><a href="">...</a></li>
-    <li><a href="">...</a></li>
-    <li class="uk-disabled"><a href="">...</a></li>
-
-
-<?php } ?>
+if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page. 
+   	//include(locate_template('templates/partial-tabs.php'));
+   	get_template_part('templates/partial', 'tabs');
+} ?>

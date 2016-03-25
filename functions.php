@@ -47,6 +47,7 @@ function is_child( $page_id_or_slug ) { // $page_id_or_slug = The ID of the page
 
 
 
+
 // function icon_class($classes, $item){
 //     if(your condition){ //example: you can check value of $item to decide something...
 //         $classes[] = 'my_class';

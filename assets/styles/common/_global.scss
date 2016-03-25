@@ -1,4 +1,12 @@
 
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
 /* use this when extending a uikit grid style */
 %borderbox{
 	box-sizing: border-box;
@@ -69,4 +77,8 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 
 	}
 
+}
+
+.widget ul {
+	list-style: none;
 }
