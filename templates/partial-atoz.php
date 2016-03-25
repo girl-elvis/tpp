@@ -55,7 +55,7 @@ foreach ( $lastposts as $post ) {
 
         if($state['letter'] == $state['nextLetter'] ) {
         	$state['nextLetter']++;  // if the while loop just ran we need to increment the next expected letter 1 more...
-            // in some languages this is called a while...else loop. The reason is we need letter and nextletter to be equal to
+            // in some languages this is called a while...else loop. The reason is: we need letter and nextletter to be equal to
             // exit the while loop (when we're cought up accounting for letters that have no entries) but then we need to move
             // the next letter on one to use it for the next occasion
         }
