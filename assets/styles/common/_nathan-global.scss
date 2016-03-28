@@ -3,6 +3,17 @@ background: $background;
 
 }*/
 
+.uk-navbar-flip {
+	a {
+	color: $dark-neutral!important;
+	}
+}
+
+.uk-navbar-flip>li>a:active,
+.uk-navbar-flip>li>a:hover {
+	color: $white!important;
+}
+
 .wrap .content .main {
 	padding-bottom: 3em;
 }
@@ -74,10 +85,25 @@ footer {
 }
 
 
+footer .strapline {
+	text-align: center;
+	font-size: 1.8em;
+}
+
+.credits {
+	text-align: center;
+	display: block;
+	a {
+	color:  $white;
+}
+}
  
 .pagenav li {
 	@extend %orange-crush;
-	height:  %half-height;
+	// height:  %half-height;
+	&:hover {
+	@extend %grey-blanket;
+	}
 }
 
 
@@ -101,9 +127,10 @@ footer {
 }
 
 
-@media (min-width: 768px) {
+
+
 	
-.cat-half, .uk-width-medium-1-1 {
+.uk-width-medium-1-1 {
         margin-bottom: 1em;
-	}
+
 }

@@ -36,8 +36,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'cat-single', 240, 190, true ); 
-  add_image_size( 'cat-double', 550, 280, true );
+  add_image_size( 'cat-single', 410, 360, true ); 
+  add_image_size( 'cat-double', 720, 410, true );
  
 
   // Enable post formats

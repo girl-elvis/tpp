@@ -10,7 +10,8 @@ $sidebar-sm-columns:    4;
 
 // GRID STUFF */
 
-$control-height: 265px;
+// $control-height: 265px;
+// %half-height: 6em;
 $radius: 4px;
 
 .container {
@@ -146,11 +147,11 @@ h2::after {
 
 // Navbar links
 
-$navbar-background:  #ff0000;
+// $navbar-background:  #ff0000;
 $navbar-nav-hover-background: $brand-light;
-$navbar-nav-color: #ff0000;
+// $navbar-nav-color: #ff0000;
 $navbar-nav-hover-color: #fff;
-$navbar-color:     #fff;
+// $navbar-color:     #fff;
 $navbar-link-color: $brand-light;
 // $navbar-nav-font-weight: bold;
 
@@ -239,6 +240,11 @@ $navbar-nav-onclick-color: $navbar-nav-color;
 
 .nav-primary ul li:last-child {
 	padding-right: 3px;
+}
+
+.nav>li>a:active, .uk-navbar-nav>li>a:active,
+.nav>li>a:hover, .uk-navbar-nav>li>a:hover {
+	background: lighten($dark-neutral, 5%) url('../images/textures/diagonal-noise.png');
 }
 
 .uk-navbar-flip>li {
@@ -362,65 +368,31 @@ $panel-header-title-color: $white;
 
 $panel-box-background-primary: lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
 
-%test {
-	background: $panel-box-background;
-	background-blend-mode: multiply;
-}
-
-/*@mixin hook-panel-box() {
-@extend %orange-crush;
-}*/
-
-
-
-// @mixin hook-panel-header() {}
-
-
-/*.cat-panel h3 {
-	color:  $white;
-}*/
-
-
-
-
-
-// FOOTER
-
-/*footer {
-	@extend %orange-crush;
-	a {
-	color:$white;
-	padding: 3px 6px;
-	&:hover {
-	@extend %blue-crush;
-}
-	}
-	ul {
-		padding-left: 0;
-	}
-	li {
-		list-style: none;
-		
-	}
-	h3 {
-		color: $white;
-	}
-}*/
 
 // ACCORDIONS & ASSORTED INSTRUMENTS
 
-// $accordion-title-margin-bottom:                  15px !default;
+$accordion-title-margin-bottom:                  5px;
 // $accordion-title-padding-vertical:               5px !default;
-// $accordion-title-padding-horizontal:             15px !default;
-$accordion-title-font-size:                      18px !default;
+$accordion-title-padding-horizontal:             15px;
+$accordion-title-font-size:                      24px;
 // $accordion-title-line-height:                    24px !default;
-$accordion-title-background:                     $light-neutral;
+$accordion-title-background:                     lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
+$accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
+$accordion-content-padding-horizontal:           2em;
+$accordion-content-padding-bottom:               3em;
 
-//$accordion-content-padding-horizontal:           $accordion-title-padding-horizontal !default;
-//$accordion-content-padding-bottom:               $accordion-title-padding-horizontal !default;
+.uk-accordion-title.uk-active {
+	background: $accordion-title-background-active;
+}
 
-.uk-accordion-title {
-	
+
+
+.uk-accordion-content {
+    padding: $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
+    li {
+    list-style: none;
+    margin-left: 2em;
+    }
 }
 
 // TABS
