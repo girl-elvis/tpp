@@ -2,7 +2,9 @@
   <div class="container">
 
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <div class="strapline"><?php bloginfo('description'); ?></div>
+    <div class="strapline uk-push-width-3-4"><?php bloginfo('description'); ?></div>
+    <div class="cat-grid"><div class="uk-pull-width-1-4"><a class="uk-button button secondary uk-float-right" href="">Contact us</a></div></div>
+    
 
 <!-- Phone menu -->
     <button class="uk-button uk-float-right uk-visible-small" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button>

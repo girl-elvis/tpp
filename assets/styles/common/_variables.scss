@@ -102,6 +102,13 @@ $base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, s
 $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 
 
+// Icons 
+
+[class*=uk-icon-] {
+	margin-right: 0.5ex;
+	font-size: 2em;
+}
+
 //
 // Buttons, Navs & Badges
 //
@@ -295,6 +302,15 @@ a.brand {
 
 /* BUTTONS */
 
+// $button-font-size:                               1rem !default;
+$button-background:                              $brand-secondary;
+$button-color:                                   $white;
+$button-hover-background:                        darken($brand-secondary, 30%);
+$button-hover-color:                             $button-color;
+$button-active-background:                       #ddd !default;
+$button-active-color:                            #444 !default;
+
+
 %cta {
 	background: $brand-secondary;
 	border-radius: $radius;
@@ -307,7 +323,8 @@ a.brand {
 	
 }
 
-.button {
+.button,
+.uk-button {
 	@extend %cta;
 	&:hover {
 	background-color: darken($brand-secondary, 30%);
@@ -318,20 +335,50 @@ a.brand {
 
 // PANELS
 
-$panel-box-primary-background:        $brand-primary;
-$panel-box-background: none;
-$panel-box-color: $white;
+@mixin hook-panel-box-primary(){
+@extend %orange-crush;
+}
+
+// $panel-box-padding:                              15px !default;
+$panel-box-background:                           $light-neutral;
+$panel-box-color:                                $dark-neutral;
+$panel-box-hover-color:                          $brand-primary;
+$panel-box-title-color:                          $panel-box-color;
+
+$panel-box-primary-background:                   none;
+$panel-box-primary-color:                        $white;
+$panel-box-primary-hover-color:                  $panel-box-primary-color !default;
+$panel-box-primary-title-color:                  $white;
 
 
 
 .uk-panel-box-primary,
 .cat-panel {
+	// @extend %orange-crush;
+}
+
+/*.cat-panel {
+	@extend %radius;
+}*/
+
+.uk-panel-box-primary {
 	@extend %orange-crush;
 }
 
+.cat-panel h3 {
+	color:  $white;
+}
 /*.uk-panel {
 	@extend %orange-crush;
 }*/
+
+.uk-panel-box-primary {
+    color: $panel-box-primary-color;
+   // @include hook-panel-box-primary();
+    @extend %texture-background;
+}
+
+// FOOTER
 
 footer {
 	@extend %orange-crush;
