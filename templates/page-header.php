@@ -19,7 +19,7 @@ if (is_page("patients") || is_child( 'patients')) {
     if (wp_get_nav_menu_object("Submenu about" )) echo (wp_nav_menu( $menuParameters ) );
 } elseif (is_page("gps") || is_child( 'gps')) {
 	 $menuParameters = array(
-		'menu' => 'Submenu GPs', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'cat-grid uk-grid pagenav', 	
+		'menu' => 'Submenu: GPs', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'cat-grid uk-grid pagenav', 	
 		);     
     if (wp_get_nav_menu_object("Submenu: GPs" )) echo (wp_nav_menu( $menuParameters ) );
 }

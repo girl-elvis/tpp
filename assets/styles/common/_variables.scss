@@ -5,9 +5,7 @@ $icon-font-path:        "../fonts/";
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
-.container {
-	@extend .uk-container-center; // centres things
-}
+
 
 
 // GRID STUFF */
@@ -15,6 +13,10 @@ $sidebar-sm-columns:    4;
 $control-height: 265px;
 $radius: 4px;
 
+.container {
+	@extend .uk-container-center; // centres things
+	@extend $control-height;
+}
 
 
 // Colors
@@ -344,52 +346,47 @@ $button-active-color:                            #444 !default;
 // PANELS
 
 
- 
-
-/*@mixin hook-panel-box-primary(){
-background-image: url('../images/textures/diagonal-noise.png');
-	background-repeat: repeat;
-	 background-blend-mode: multiply;
-
-}*/
 
 // $panel-box-padding:                              15px !default;
- $panel-box-background:                          $light-neutral;
+$panel-box-background:                           lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
 $panel-box-color:                                $dark-neutral;
 $panel-box-hover-color:                          $brand-primary;
 $panel-box-title-color:                          $white;
-$panel-box-background-image:				url('../images/textures/diagonal-noise.png');
 
- $panel-box-primary-background:                   lighten($brand-primary, 5%);
-//$panel-box-primary-background-image:				url('../images/textures/diagonal-noise.png');
+// $panel-box-background:                           lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
 $panel-box-primary-color:                        $white;
-$panel-box-primary-hover-color:                  $panel-box-primary-color !default;
+// $panel-box-primary-hover-color:                  $panel-box-primary-color;
 $panel-box-primary-title-color:                  $white;
 
 $panel-header-title-color: $white;
 
-	
+$panel-box-background-primary: lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
 
-	
-
-
-.cat-panel h3 {
-	color:  $white;
+%test {
+	background: $panel-box-background;
+	background-blend-mode: multiply;
 }
 
+/*@mixin hook-panel-box() {
+@extend %orange-crush;
+}*/
 
 
-// @mixin hook-panel-box-primary(){
-// 	//background-color: red;
-// 	@extend %orange-crush;
-//  }
+
+// @mixin hook-panel-header() {}
+
+
+/*.cat-panel h3 {
+	color:  $white;
+}*/
+
 
 
 
 
 // FOOTER
 
-footer {
+/*footer {
 	@extend %orange-crush;
 	a {
 	color:$white;
@@ -408,7 +405,7 @@ footer {
 	h3 {
 		color: $white;
 	}
-}
+}*/
 
 // ACCORDIONS & ASSORTED INSTRUMENTS
 
@@ -453,20 +450,5 @@ $tab-hover-background: $light-neutral;
 @mixin hook-tab-disabled(){}
 @mixin hook-tab-misc(){}*/
 
-.uk-tab li a {
-	font-size: 1.3em;
-	// background: $tab-hover-background;
-	@extend %tabs;
-	&:hover {
-	@extend %tabs;
-	}
-}
-
-.uk-active h2 {
-	margin-top: 12px;
-	&::after {
-	background:  none;
-	}
-}
 
 

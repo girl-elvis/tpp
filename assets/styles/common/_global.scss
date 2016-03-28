@@ -38,13 +38,12 @@ button {
 			@extend .uk-width-large-1-2;
 	}
 
-.cat-panel, .pagenav li{
-	@extend .uk-panel;
-	@extend .uk-panel-box;
+.cat-panel {
+	// @extend .uk-panel;
+	// @extend .uk-panel-box;
 	//@extend .uk-panel-box-primary;
 
 }
-
 
 .container {
 	@extend .uk-container;

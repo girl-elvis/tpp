@@ -20,6 +20,6 @@
     }
   },
   "config": {
-    "devUrl": "http://tpp/"
+    "devUrl": "http://localhost:8888/thepathologypartnership.co.uk"
   }
 }
