@@ -1,3 +1,5 @@
-body {
-   background-image: none;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .uk-panel-box-primary {
+        background: #ee6800;
+    }
 }
