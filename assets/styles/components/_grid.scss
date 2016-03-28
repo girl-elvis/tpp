@@ -1,0 +1,27 @@
+// sidebar
+.wrap .content {
+	@extend .uk-grid;
+	//@extend .uk-grid-match;
+	@extend %borderbox;
+	& > * {@extend %borderbox;}
+	.main {
+	  width: 100%;
+	  .sidebar-primary & {
+	  	//@extend %borderbox;
+	  	@extend .uk-width-medium-3-4 ;
+	  }
+	}
+	.sidebar {
+		//@extend %borderbox;
+		@extend .uk-width-medium-1-4 ;
+	}
+
+
+}
+
+.cat-panel h4 {
+	   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 -10px;
+}

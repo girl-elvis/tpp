@@ -1,10 +1,10 @@
 
-<?php // ADD Section header if needed ?>
+<?php // ADD Section header if needed 
 
-<?php if (is_front_page()){
+
 	// Get homepage boxes
 ?>
-<div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
 	<div class="cat-half">
 		<div class="cat-panel">
 
@@ -28,7 +28,11 @@
 
 		 	// loop through the rows of data
 		    while ( have_rows('boxes') ) : the_row();
+<<<<<<< HEAD
 			echo "<div><div class='uk-panel uk-panel-box uk-panel-box-primary'><h3 class='uk-panel-title'>";
+=======
+			echo "<div><div class='cat-panel cat-panel-primary'><h3 class='uk-panel-title'>";
+>>>>>>> 34e7c84201fbf3d794c3a02a311d7098cf8a4d48
 			echo "<i class='uk-icon-" . get_sub_field( 'icon' )   ."'></i>";
 		        // display a sub field value
 		        the_sub_field('title');
@@ -52,20 +56,19 @@
 </div>
 	<?php
 
-}
 
 ?>
 
 
 <?php the_content(); ?>
 
-<?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+<?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
 
-<?php if (is_front_page()){
+
 	// News Loop of 4
 	?>
 
-<h2>News</h2><div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<h2>News</h2><div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
 
 <?php
 	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category_name' => 'news', 'post_status' => 'publish' );
@@ -95,7 +98,6 @@
 	wp_reset_postdata();
 
 	
-}
 ?>
 </div>
 

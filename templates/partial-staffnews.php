@@ -1,0 +1,24 @@
+<?php // list of news for Staff landing page  ?>
+
+
+<ul class="newspanels uk-grid uk-grid-match uk-grid-width-medium-1-3">
+<?php
+
+$args = array( 'posts_per_page' => 6);
+$myposts = get_posts( $args );
+foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+	<li><div class="cat-panel">
+		<div class="uk-panel-teaser">
+				<?php 
+		        if ( has_post_thumbnail() ) {
+
+					    the_post_thumbnail( '' );
+					} 
+					
+
+	    echo ("</div><h4><a href='" . get_the_permalink() . "'>" . get_the_title() . "</a></h4>");
+	    ?>
+	</div></li>
+<?php endforeach; 
+wp_reset_postdata();?>
+</ul>

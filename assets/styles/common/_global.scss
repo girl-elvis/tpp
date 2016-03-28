@@ -1,5 +1,18 @@
 
-/* theme: Default */
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+/* use this when extending a uikit grid style */
+%borderbox{
+	box-sizing: border-box;
+    //width: 100%;
+}
+
 
 table {
 	@extend .uk-table;
@@ -9,24 +22,27 @@ button {
 }
 
 .cat-grid {
-	    box-sizing: border-box;	
-	@extend .uk-grid;
+	// @extend %borderbox;
+	// @extend .uk-grid;
 	@extend .uk-grid-match;
 	@extend .uk-grid-width-medium-1-2;
 	@extend .uk-grid-width-large-1-4;
 	& > * {
-	    box-sizing: border-box;
+	    @extend %borderbox;
 	}
+
+}
 	.cat-half {
+		@extend .uk-width-1-1;
+			@extend .uk-width-medium-1-1;
 			@extend .uk-width-large-1-2;
 	}
-}
 
+.cat-panel, .pagenav li{
+	@extend .uk-panel;
+	@extend .uk-panel-box;
+	//@extend .uk-panel-box-primary;
 
-.cat-panel, .pagenav li {
-	// @extend .uk-panel;
-	//  @extend .uk-panel-box;
-	// @extend .uk-panel-box-primary;
 }
 
 
@@ -42,4 +58,28 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
     @extend .uk-icon-#{$i};
     font-family: FontAwesome;
   }
+}
+
+
+.uk-accordion {
+	div {
+		box-sizing: border-box;
+	}
+	.uk-accordion-content {
+		@extend .uk-grid;
+		.data-title{
+			@extend .uk-width-1-10;
+		}
+		.data-definition{
+			@extend .uk-width-9-10;
+		}
+
+
+	}
+
+}
+
+.widget ul {
+	list-style: none;
+  padding-left: 15px;
 }
