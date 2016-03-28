@@ -1,6 +1,7 @@
+@import "../../bower_components/uikit/scss/uikit-mixins.scss";
+
 @import "common/variables";
 
-@import "../../bower_components/uikit/scss/uikit-mixins.scss";
 
 @import "../../bower_components/uikit/scss/uikit.scss";
 
@@ -12,6 +13,7 @@
 
 
 @import "common/global";
+@import "common/nathan-global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";

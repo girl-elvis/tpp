@@ -24,10 +24,11 @@ button {
 
 
 .cat-panel, .pagenav li {
-	@extend .uk-panel;
-	@extend .uk-panel-box;
+	// @extend .uk-panel;
+	//  @extend .uk-panel-box;
 	// @extend .uk-panel-box-primary;
 }
+
 
 .container {
 	@extend .uk-container;
