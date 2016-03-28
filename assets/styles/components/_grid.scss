@@ -25,3 +25,10 @@
     text-overflow: ellipsis;
     margin: 0 -10px;
 }
+
+@media only screen and (min-width : 992px){ 
+	.home .cat-half, .home .uk-width-medium-1-1 {
+	        margin-bottom: 0;
+		}
+	
+}

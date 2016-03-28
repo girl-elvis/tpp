@@ -25,18 +25,20 @@ button {
 	// @extend %borderbox;
 	// @extend .uk-grid;
 	@extend .uk-grid-match;
+	@extend .uk-grid-width-small-1-1;
 	@extend .uk-grid-width-medium-1-2;
 	@extend .uk-grid-width-large-1-4;
+
 	& > * {
 	    @extend %borderbox;
 	}
 
 }
-	.cat-half {
-		@extend .uk-width-1-1;
-			@extend .uk-width-medium-1-1;
-			@extend .uk-width-large-1-2;
-	}
+.cat-half {
+	@extend .uk-width-1-1;
+		@extend .uk-width-medium-1-1;
+		@extend .uk-width-large-1-2;
+}
 
 .cat-panel {
 	// @extend .uk-panel;
