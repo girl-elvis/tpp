@@ -4,8 +4,8 @@
 
   
 
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-  <div class="uk-grid"> <div class="strapline uk-width-3-4"><?php bloginfo('description'); ?></div>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="smlogo"></span><?php bloginfo('name'); ?></a>
+  <div class="uk-grid cat-grid"> <div class="strapline uk-width-medium-3-4"><?php bloginfo('description'); ?></div>
   
   <!-- Phone menu -->
       <button class="uk-button uk-float-right uk-visible-small" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button>
@@ -28,7 +28,7 @@
     </div>
   <!-- Phone menu -->
   
-    <div class="uk-width-1-4"><a class="button secondary uk-float-right" href="">Contact us</a></div></div>
+    <div class="uk-width-medium-1-4"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
     
 
 

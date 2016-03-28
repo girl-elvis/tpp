@@ -4,7 +4,7 @@
 
 	// Get homepage boxes
 ?>
-<div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<div class="uk-grid cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
 	<div class="cat-half">
 		<div class="cat-panel">
 
@@ -75,13 +75,13 @@
 	$postslist = get_posts( $args );
 	foreach ( $postslist as $post ) :
 	  setup_postdata( $post ); ?> 
-	<div class="">
+	<div class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-4">
 		<div class="cat-panel">
 			<div class="uk-panel-teaser">
 				<?php 
 		        if ( has_post_thumbnail() ) {
 
-					    the_post_thumbnail( 'cat-double' );
+					    the_post_thumbnail( 'cat-single' );
 					} 
 					?>
 
