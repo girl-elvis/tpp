@@ -354,13 +354,13 @@ background-image: url('../images/textures/diagonal-noise.png');
 }*/
 
 // $panel-box-padding:                              15px !default;
- $panel-box-background:                           lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
+ $panel-box-background:                          $light-neutral;
 $panel-box-color:                                $dark-neutral;
 $panel-box-hover-color:                          $brand-primary;
 $panel-box-title-color:                          $white;
 $panel-box-background-image:				url('../images/textures/diagonal-noise.png');
 
-// $panel-box-primary-background:                   lighten($brand-primary, 5%);
+ $panel-box-primary-background:                   lighten($brand-primary, 5%);
 //$panel-box-primary-background-image:				url('../images/textures/diagonal-noise.png');
 $panel-box-primary-color:                        $white;
 $panel-box-primary-hover-color:                  $panel-box-primary-color !default;
@@ -368,11 +368,9 @@ $panel-box-primary-title-color:                  $white;
 
 $panel-header-title-color: $white;
 
+	
 
-@mixin hook-panel-box(){
-@extend %orange-crush;
- 	 }
-
+	
 
 
 .cat-panel h3 {
@@ -380,10 +378,12 @@ $panel-header-title-color: $white;
 }
 
 
-/*.uk-panel-box {
-background-blend-mode: multiply;
-color: $panel-box-primary-title-color;
-}*/
+
+// @mixin hook-panel-box-primary(){
+// 	//background-color: red;
+// 	@extend %orange-crush;
+//  }
+
 
 
 
