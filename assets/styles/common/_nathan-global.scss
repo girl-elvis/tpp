@@ -1,12 +1,109 @@
+/*@mixin hook-panel-box( $background: $panel-box-background-primary) {
+background: $background;
+
+}*/
+
+.wrap .content .main {
+	padding-bottom: 3em;
+}
+
+// HEADERS 
+
+h4 a {
+	color: $dark-neutral;
+}
+
+
+.uk-panel-box-primary {
+	background-blend-mode: multiply;
+}
+.uk-panel-box {
+	background: $panel-box-background;
+	background-blend-mode: multiply;
+}
+
+.uk-panel-box-primary {
+background: $panel-box-background-primary;
+background-blend-mode: multiply;
+}
+
+// BUTTONS 
+
+.secondary,
+.uk-button, button {
+	@extend %cta;
+}
+
+// LISTS
+
+%panel-primary-list {
+	ul {
+		padding-left: 0;
+	}
+	li {
+		list-style: none;
+		
+	}
+	li a {
+		color: $white;
+		padding: 3px 6px;
+		&:hover {
+		@extend %blue-crush;
+	}
+	}
+}
+
+.uk-panel-box {
+	@extend %panel-primary-list;	
+}
+
+.uk-panel-box li {
+
+}
+
+footer section.widget {
+	background: none;
+}
+
+footer {
+	@extend %orange-crush;
+	@extend %panel-primary-list;
+	h3 {
+		color: $white;
+	}
+}
+
 
  
+.pagenav li {
+	@extend %orange-crush;
+	height:  %half-height;
+}
 
- 
- 
- .uk-panel-box {
 
- 
-/*	 background-image: $panel-box-background-image;
-	 background-color: $brand-primary;
-	  background-blend-mode: multiply;	*/
+
+// TABS
+
+.uk-tab li a {
+	font-size: 1.3em;
+	// background: $tab-hover-background;
+	@extend %tabs;
+	&:hover {
+	@extend %tabs;
+	}
+}
+
+.uk-active h2 {
+	margin-top: 12px;
+	&::after {
+	background:  none;
+	}
+}
+
+
+@media (min-width: 768px) {
+	
+.cat-half, .uk-width-medium-1-1 {
+        margin-bottom: 1em;
+	}
 }
