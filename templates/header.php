@@ -43,5 +43,16 @@
   </div>
 </header>
 
-<?php if ( function_exists('yoast_breadcrumb') ) 
-{yoast_breadcrumb('<div id="breadcrumbs" class="container">','</div>');} ?>
+<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs" class="container">','</div>');} 
+
+
+if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
+  echo ("<div class='container'><div class='uk-grid'><div class='cat-half'>");
+      //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
+  echo do_shortcode ('[new_royalslider id="1"]');
+
+   echo ("</div></div>");
+}
+
+?>
+

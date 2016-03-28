@@ -22,21 +22,21 @@ button {
 }
 
 .cat-grid {
-	@extend %borderbox;
-	@extend .uk-grid;
+	// @extend %borderbox;
+	// @extend .uk-grid;
 	@extend .uk-grid-match;
 	@extend .uk-grid-width-medium-1-2;
 	@extend .uk-grid-width-large-1-4;
 	& > * {
 	    @extend %borderbox;
 	}
+
+}
 	.cat-half {
 		@extend .uk-width-1-1;
 			@extend .uk-width-medium-1-1;
 			@extend .uk-width-large-1-2;
 	}
-}
-
 
 .cat-panel, .pagenav li{
 	@extend .uk-panel;
@@ -81,4 +81,5 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 
 .widget ul {
 	list-style: none;
+  padding-left: 15px;
 }

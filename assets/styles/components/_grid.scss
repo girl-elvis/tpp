@@ -19,3 +19,9 @@
 
 }
 
+.cat-panel h4 {
+	   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 -10px;
+}

@@ -24,4 +24,8 @@ if (is_page("staff") ){ // Adds Staff News to page.
 if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page. 
    	//include(locate_template('templates/partial-tabs.php'));
    	get_template_part('templates/partial', 'tabs');
-} ?>
+} 
+
+
+
+?>

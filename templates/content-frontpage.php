@@ -1,10 +1,10 @@
 
-<?php // ADD Section header if needed ?>
+<?php // ADD Section header if needed 
 
 
 	// Get homepage boxes
 ?>
-<div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
 	<div class="cat-half">
 		<div class="cat-panel">
 
@@ -58,13 +58,13 @@
 
 <?php the_content(); ?>
 
-<?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+<?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
 
 
 	// News Loop of 4
 	?>
 
-<h2>News</h2><div class="cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<h2>News</h2><div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
 
 <?php
 	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category_name' => 'news', 'post_status' => 'publish' );
