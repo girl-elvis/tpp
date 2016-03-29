@@ -1,3 +1,12 @@
+/*Some fixes that make the site very basically useful on <= ie8*/
+
+.alert-warning {
+    background: #8b0000;
+    color: #fff;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
 .uk-panel-box-primary {
     background: #ee6800;
 }
@@ -9,4 +18,45 @@
 
 .uk-navbar-flip>li {
     background-color: #f3f3f3;
+}
+
+.banner {
+    position: relative;
+    left: 0;
+}
+
+/*this is as specific as I can get trying to hide the menu button*/
+body > .container > .cat-grid > button.uk-visible-small {
+    display: none;
+}
+
+body > .container > .cat-grid > div.uk-width-medium-1-4 > a.cta {
+    width: 23%;
+    margin-bottom: 10px;
+}
+
+.wrap .content {
+    margin-left: -50px;
+}
+
+.content .cat-grid {
+    width: 100%;
+}
+
+.content > .cat-grid > div{
+    width: 50%;
+}
+
+.content .menu-submenu-services-container,
+.content .menu-submenu-about-container,
+.content .menu-submenu-patients-container,
+.content .menu-submenu-news-container,
+.content .menu-submenu-gps-container,
+.content .menu-submenu-joinus-container{
+    float: none;
+}
+
+
+.content .page-header {
+    float: none;
 }
