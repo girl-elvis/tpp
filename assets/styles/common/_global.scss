@@ -1,4 +1,8 @@
-
+.container {
+	@extend .uk-container;
+	@extend .uk-container-center; // centres things
+	@extend $control-height;
+}
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
@@ -47,9 +51,7 @@ button {
 
 }
 
-.container {
-	@extend .uk-container;
-}
+
 
 // Icons in page menus
 $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
