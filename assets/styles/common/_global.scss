@@ -3,6 +3,7 @@
 	@extend .uk-container-center; // centres things
 	@extend $control-height;
 }
+
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
@@ -50,7 +51,6 @@ button {
 	//@extend .uk-panel-box-primary;
 
 }
-
 
 
 // Icons in page menus

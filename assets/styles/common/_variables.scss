@@ -1,71 +1,85 @@
-// Glyphicons font path - ICON FONTS IN DIST! Thsi path breaks the UK bower path :-)
+// Glyphicons font path - ICON FONTS IN DIST! This path breaks the UK bower path :-)
 $icon-font-path:        "../fonts/";
 
+//$icons: success error warning;
+
+//@each $icon in $icons {
+//  .icon-#{$icon} {
+//    background-image: url(/images/icons/#{$icon}.png);
+//  }
+// }
+
 // Grid settings
+
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
-
-
 
 
 // GRID STUFF */
 
 // $control-height: 265px;
 // %half-height: 6em;
-$radius: 4px;
-
 
 
 
 // Colors
+
 $brand-primary:         #d45d00; // TPP Orange
 $brand-secondary: invert($brand-primary); // TPP Blue
 $brand-success: 		#36b939; // TPP Green
 
-$light-neutral: 		#e6e6e6;
-$dark-neutral: 			#878785;
+$secondary-darker: darken($brand-secondary, 30%);
+$secondary-lighter: lighten($brand-secondary, 10%);
 
-$white:					#f7f7f7;
+$neutral:  				#878785;
+
+$neutral-light: 		lighten($neutral, 70%);
+$neutral-dark: 			darken($neutral, 20%);
+
+$text-light: 			#fff;
+$text-dark: 			$neutral-dark;
+$text-darker: 			darken( $neutral-dark, 2);
+
+$primary-light: #fff;
+
+$primary-dark:	darken( $brand-primary, 1 );
+$primary-medium: lighten( $brand-primary, 5 );
+$primary-light: lighten( $brand-primary, 10 );
+
+$dark-orange: ($primary-dark url('../images/textures/diagonal-noise.png') repeat);
+$orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') repeat);
+$orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
+$blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
+$grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
 
 
-$brand-light: lighten( $brand-primary, 4 );
-$brand-lightest: lighten( $brand-primary, 10 );
+// Block colours
 
-
-%texture-background { // not used alone, use orange crush, blue crush or grey blanket for effects.
-background-image: url('../images/textures/diagonal-noise.png');
-background-repeat: repeat;
- background-blend-mode: multiply;	
+@mixin block-colours($background, $colour) {
+	 background: $background;
+	 color: $colour;
+	 background-blend-mode: multiply;	 
 }
-
-%orange-crush {
-	@extend %texture-background;
-	background-color: lighten($brand-primary, 5%);
-	color: $white;
-}
-
-%blue-crush {
-	@extend %texture-background;
-	background-color: lighten($brand-secondary, 5%);
-	color: $white;
-}
-
-%grey-blanket {
-	@extend %texture-background;
-	background-color: lighten($dark-neutral, 5%);
-	color: $dark-neutral;
-}
-
 
 
 // Base
 
-$base-link-color: $brand-secondary;
+$base-link-color: $text-light;
 $base-link-hover-text-decoration: none;
+
+@mixin hook-base-link(){
+	
+}
+
+@mixin hook-base-link-hover(){
+	
+}
 
 
 // Typography
 //
+
+// Orange gradient
 
 @mixin gradient-horizontal-primary($start-color: $brand-primary, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
@@ -75,8 +89,9 @@ $base-link-hover-text-decoration: none;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
 
+// neutral gradient
 
-@mixin gradient-horizontal-neutral($start-color: $light-neutral, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+@mixin gradient-horizontal-neutral($start-color: $neutral-light, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
   background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
@@ -91,6 +106,7 @@ $global-link-hover-color: #2079bf;
 
 
 // Main fonts
+
 %calibri {
 	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 	font-style: normal;
@@ -100,6 +116,17 @@ $global-link-hover-color: #2079bf;
 
 $base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+
+
+// BREADCRUMBS
+
+#breadcrumbs span a {
+	color: $text-dark;
+}
+.breadcrumb_last {
+color: $secondary-lighter;
+	
+}
 
 
 // Icons 
@@ -112,6 +139,8 @@ $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, san
 //
 // Buttons, Navs & Badges
 //
+
+$radius: 4px;
 
 $global-primary-background: #d45d00;
 $global-success-background: #36b939;
@@ -142,46 +171,101 @@ h2::after {
 
 // NAVBAR
 
-// Navbar links
-
-// $navbar-background:  #ff0000;
-$navbar-nav-hover-background: $brand-light;
-// $navbar-nav-color: #ff0000;
-$navbar-nav-hover-color: #fff;
-// $navbar-color:     #fff;
-$navbar-link-color: $brand-light;
-// $navbar-nav-font-weight: bold;
 
 
-%navbar-a {
-	display: inline;
-	padding: 7px 16px;
-	text-transform: uppercase;
-}
 
 // Navbar Mixins
 
-@mixin navbarColours($extend: true) {
-  @if $extend {
-    @extend %navbarColours;
-  }
-  @else {
-    @extend %orange-crush;
-  }
+
+$navbar-background:                              none;
+$navbar-color:                                   $text-light;
+$navbar-link-color:                              $text-light;
+$navbar-link-hover-color:                        $text-light;
+
+$navbar-nav-height:                              40px !default;
+$navbar-nav-line-height:                         $navbar-nav-height !default;
+$navbar-nav-padding-horizontal:                  15px !default;
+$navbar-nav-color:                               $text-light;
+$navbar-nav-font-size:                           14px !default;
+$navbar-nav-font-weight:                         normal !default;
+
+$navbar-nav-hover-background:                    $grey-blanket;
+$navbar-nav-hover-color:                         $text-darker;
+$navbar-nav-onclick-background:                  #ddd !default;
+$navbar-nav-onclick-color:                       #444 !default;
+$navbar-nav-active-background:                   #f5f5f5 !default;
+$navbar-nav-active-color:                        #444 !default;
+$navbar-nav-subtitle-font-size:                  10px !default;
+$navbar-nav-subtitle-offset:                     2px !default;
+
+$navbar-brand-font-size:                         18px !default;
+$navbar-brand-color:                             #444 !default;
+$navbar-brand-hover-color:                       #444 !default;
+
+$navbar-toggle-font-size:                        18px !default;
+$navbar-toggle-color:                            #444 !default;
+$navbar-toggle-hover-color:                      #444 !default;
+$navbar-toggle-icon:                             "\f0c9" !default;
+$navbar-toggle-icon-alt:                         "\f002" !default;
+
+
+//%navbar-a {
+//	display: inline;
+//	padding: 7px 16px;
+//	text-transform: uppercase;
+//}
+
+@mixin hook-navbar-nav(){
+	text-transform: uppercase;
 }
 
-%navbarColours {
-  @include navbarColours($extend: false);
-  @extend %orange-crush;
+@mixin hook-navbar-nav-hover(){
+	@include block-colours($navbar-nav-hover-background, $navbar-nav-hover-color);
+	
 }
+
+
+#menu-main-navigation-1 {
+	border-radius: $radius;
+	background: $orange-crush;
+	background-blend-mode: multiply;
+}
+
+#menu-right-1 {
+	border-radius: $radius;
+	background: $grey-blanket;
+	background-blend-mode: multiply;
+	// @extend .uk-width-1-4;
+}
+
+.uk-navbar-nav > li {
+	border-right: 2px solid #fff;
+}
+.uk-navbar-nav > li:last-of-type {
+	border: none;
+}
+
+.uk-navbar-nav > li:last-of-type a:hover {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+.uk-navbar-nav > li:first-of-type a:hover {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+
+// @mixin hook-navbar(){
+//	 @include navbar($panel-box-primary-background, $panel-box-primary-color);
+//	 	}
 
 
 // Navbar brand
 
 
-
-$navbar-brand-color: $dark-neutral;
-$navbar-brand-hover-color: $dark-neutral;
+$navbar-brand-color: $neutral-dark;
+$navbar-brand-hover-color: $neutral-dark;
 
 a.brand {
 	// @extend .uk-navbar-brand;
@@ -189,79 +273,16 @@ a.brand {
 }
 
 
-.uk-navbar-nav li {
-	// @include hook-navbar-nav;
-	@include navbarColours
-
-}
-
-.nav>li>a, .uk-navbar-nav>li>a,
-.nav>li>a:active, .uk-navbar-nav>li>a:active,
- .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
-	@extend %navbar-a;
-	//&:hover {
-	//@extend %texture-background;
-	//background: $navbar-nav-hover-background;
-	
-	//}
-}
-
-.nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus,
-.nav>li>a:active, .uk-navbar-nav>li>a:active {
-	@extend %texture-background;
-	border-radius: $radius;
-}
-
-
-$navbar-background: none; // whole bar
-$navbar-nav-color: $white; // nav li a link text colour
-$navbar-nav-hover-color: $navbar-nav-color; // nav li a hover color
-$navbar-nav-hover-background: none; // nav li a hover bg
-$navbar-nav-onclick-background: $navbar-nav-hover-background;
-$navbar-nav-onclick-color: $navbar-nav-color;
-
-
-.nav-primary ul li:first-child, &:first-child:hover, &:first-child:active {
-	border-bottom-left-radius: $radius;
-	border-top-left-radius: $radius;	
-}
-
-.nav-primary ul li:first-child {
-	padding-left: 3px;
-}
-
-.nav-primary ul li:last-child, &:last-child:hover, &:last-child:active  {
-	border-bottom-right-radius: $radius;
-	border-top-right-radius: $radius;
-}
-
-.nav-primary ul li:last-child {
-	padding-right: 3px;
-}
-
-.nav>li>a:active, .uk-navbar-nav>li>a:active,
-.nav>li>a:hover, .uk-navbar-nav>li>a:hover {
-	background: lighten($dark-neutral, 5%) url('../images/textures/diagonal-noise.png');
-}
-
-.uk-navbar-flip>li {
-	background-color: lighten($light-neutral, 5%);
-}
-
-.uk-navbar-flip li a {
-color: $dark-neutral;
-&:hover {
-@extend %blue-crush;
-	}	
-}
-
-.uk-navbar-flip>li>a:hover {
-	// @extend %blue-crush;
-	
-}
-
-
 // pagenav 
+
+
+/*.pagenav li {
+	@extend .uk-width-1-4;
+	extend: %orange-crush;
+	a {
+	color: $text-light;
+	}
+}*/
 
 // .pagenav li div{
 // 	//@extend .uk-width-1-4;
@@ -270,6 +291,7 @@ color: $dark-neutral;
 // 	color: $white;
 // 	}
 // }
+
 
 
 // FONT STUFF
@@ -288,16 +310,17 @@ color: $global-color;
 .banner {
 	padding-top: 18px;
 }
-@media only screen and (min-width : 768px){
+
+/*@media only screen and (min-width : 768px){
 	.banner {
 		padding-bottom: 18px;
 	}
-}
+}*/
 
 
 a.brand {
 	font-size: 1.8em;
-	// color: $dark-neutral;
+	// color: $neutral-dark;
 }
 
 .banner .container:before {
@@ -309,8 +332,9 @@ a.brand {
 .strapline {
 	font-size: 1.1em;
 	line-height: 1.8em;
-	color: $light-neutral;
-	// padding-bottom: 10px;
+
+	color: $neutral-light;
+	padding-bottom: 10px;
 }
 
 .banner .strapline::after {
@@ -323,7 +347,7 @@ a.brand {
 
 // $button-font-size:                               1rem !default;
 $button-background:                              $brand-secondary;
-$button-color:                                   $white;
+$button-color:                                   $text-light;
 $button-hover-background:                        darken($brand-secondary, 30%);
 $button-hover-color:                             $button-color;
 $button-active-background:                       #ddd !default;
@@ -333,7 +357,7 @@ $button-active-color:                            #444 !default;
 %cta {
 	background: $brand-secondary;
 	border-radius: $radius;
-	color: $white;
+	color: $text-light;
 	padding: 0.5em 6.5%;
 	text-transform: uppercase;
 	&:hover {
@@ -347,48 +371,117 @@ $button-active-color:                            #444 !default;
 	@extend %cta;
 	&:hover {
 	background-color: darken($brand-secondary, 30%);
-	color: $white;
+	color: $text-light;
 	// background-color: scale-color($brand-primary, $lightness: –10%);
 	}
 }
 
 // PANELS
 
+// $panel-title-margin-bottom:                      15px !default;
+// $panel-title-font-size:                          18px !default;
+// $panel-title-line-height:                        24px !default;
+// $panel-title-font-weight:                        normal !default;
+$panel-title-color:                              $text-light;
+$panel-title-text-transform:                     uppercase;
 
+// $panel-teaser-margin-bottom:                     $panel-title-margin-bottom;
 
 // $panel-box-padding:                              15px !default;
-$panel-box-background:                           lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
-$panel-box-color:                                $dark-neutral;
-$panel-box-hover-color:                          $brand-primary;
-$panel-box-title-color:                          $white;
+// $panel-box-background:                           #f5f5f5 !default;
+$panel-box-background: 							$grey-blanket;
+$panel-box-color:                                $text-light;
+$panel-box-hover-color:                          $panel-box-color !default;
+$panel-box-title-color:                          #444 !default;
+// $panel-box-badge-top:                            10px !default;
+// $panel-box-badge-right:                          $panel-box-badge-top !default;
+// $panel-box-teaser-margin:                        -$panel-box-padding !default;
 
-// $panel-box-background:                           lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
-$panel-box-primary-color:                        $white;
-// $panel-box-primary-hover-color:                  $panel-box-primary-color;
-$panel-box-primary-title-color:                  $white;
+$panel-box-primary-background:                   $orange-crush;
+$panel-box-primary-color:                        $text-light;
+$panel-box-primary-hover-color:                  $panel-box-primary-color !default;
+$panel-box-primary-title-color:                  $panel-box-primary-color;
 
-$panel-header-title-color: $white;
+$panel-box-secondary-background:                 $orange-crush-lite;
+$panel-box-secondary-color:                      #444 !default;
+$panel-box-secondary-hover-color:                $panel-box-secondary-color !default;
+$panel-box-secondary-title-color:                #444 !default;
 
-$panel-box-background-primary: lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
+$panel-hover-padding:                            15px !default;
+$panel-hover-color:                              #444 !default;
+$panel-hover-hover-background:                   #f5f5f5 !default;
+$panel-hover-hover-color:                        #444 !default;
+$panel-hover-badge-top:                          10px !default;
+$panel-hover-badge-right:                        $panel-hover-badge-top !default;
+$panel-hover-teaser-margin:                      -$panel-hover-padding !default;
 
+$panel-header-title-padding:                     10px !default;
+$panel-header-title-border:                      #ddd !default;
+$panel-header-title-border-width:                1px !default;
+$panel-header-title-color:                       #444 !default;
+
+$panel-space-padding:                            30px !default;
+
+$panel-divider-gutter:                           25px !default;
+$panel-divider-gutter-large:                     35px !default;
+$panel-divider-border:                           #ddd !default;
+$panel-divider-border-width:                     1px !default;
+
+// $panel-body-padding:                             $panel-box-padding !default;
+
+ @mixin hook-panel-box() {
+ 	@include block-colours($panel-box-background, $panel-box-primary-color);
+ }
+@mixin hook-panel-box-primary(){
+	 @include block-colours($panel-box-primary-background, $panel-box-primary-color);
+	 	}
+	 	
+@mixin hook-panel-box-secondary(){
+	 @include block-colours($panel-box-secondary-background, $panel-box-primary-color);
+	 	}
+
+/*.cat-panel h4 {
+	   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 -10px;
+}
+*/
 
 // ACCORDIONS & ASSORTED INSTRUMENTS
+
 
 $accordion-title-margin-bottom:                  5px;
 // $accordion-title-padding-vertical:               5px !default;
 $accordion-title-padding-horizontal:             15px;
 $accordion-title-font-size:                      24px;
 // $accordion-title-line-height:                    24px !default;
-$accordion-title-background:                     lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
+$accordion-title-background:                     $grey-blanket;
 $accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
 $accordion-content-padding-horizontal:           2em;
 $accordion-content-padding-bottom:               3em;
+
+
+
+@mixin hook-accordion-title(){
+	 @include block-colours($accordion-title-background, $panel-box-primary-color);
+	 	}
+
 
 .uk-accordion-title.uk-active {
 	background: $accordion-title-background-active;
 }
 
-
+.uk-accordion ul {
+	@extend .uk-list-line;
+	display: block;
+	li {
+	display: block;
+	&:hover {
+	background: $neutral-light;
+		}
+	}
+}
 
 .uk-accordion-content {
     padding: $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
@@ -398,32 +491,59 @@ $accordion-content-padding-bottom:               3em;
     }
 }
 
+
+.name_directory_index {
+	a {
+	font-size: 150%;
+	color: $text-light;
+	background: $secondary-darker;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 6px;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	line-height: 1em;
+	&:hover {
+	color: $text-light;
+	background: $brand-secondary;
+	}
+	}
+}
+
+
 // TABS
 
 %tabs {
 	border-radius: $radius $radius 0 0;
 }
 
-$tab-border: $brand-light;
+$tab-border: $primary-light;
 $tab-border-width: 3px;
 
 $tab-color: $global-color;
 $tab-hover-color: $tab-color;
 
-$tab-hover-background: $light-neutral;
-$tab-active-background: $brand-light;
+$tab-hover-background: $neutral-light;
+$tab-active-background: $primary-light;
 $tab-active-border: $tab-active-background;
-$tab-active-color: $white;
-$tab-hover-border:  $light-neutral;         
-$tab-hover-background: $light-neutral;
+$tab-active-color: $text-light;
+$tab-hover-border:  $neutral-light;         
+$tab-hover-background: $neutral-light;
 
-/*@mixin hook-tab(){
+//@mixin hook-tab(){
 // @extend %orange-crush;
-}
-@mixin hook-tab-hover(){}
-@mixin hook-tab-active(){}
-@mixin hook-tab-disabled(){}
-@mixin hook-tab-misc(){}*/
+// }
+// @mixin hook-tab-hover(){}
+// @mixin hook-tab-active(){}
+// @mixin hook-tab-disabled(){}
+// @mixin hook-tab-misc(){}*/
 
 
+
+// FOOTER MIXINS
+
+// @mixin hook-panel-box-primary(){
+	// @include block-colours($panel-box-primary-background, $panel-box-primary-color);
+//	 	}
 

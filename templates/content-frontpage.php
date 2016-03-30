@@ -76,7 +76,7 @@
 	foreach ( $postslist as $post ) :
 	  setup_postdata( $post ); ?> 
 	<div class="">
-		<div class="uk-panel">
+		<div class="uk-panel uk-panel-box">
 			<div class="uk-panel-teaser">
 				<?php 
 		        if ( has_post_thumbnail() ) {
