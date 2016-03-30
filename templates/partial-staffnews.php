@@ -4,7 +4,13 @@
 <ul class="newspanels uk-grid uk-grid-match uk-grid-width-medium-1-3">
 <?php
 
-$args = array( 'posts_per_page' => 6);
+if (is_page("staff")) {
+	$pt="staff_news";
+} elseif(is_page("people")){
+	$pt="person";	
+}
+
+$args = array( 'posts_per_page' => 6, 'post_type' => $pt);
 $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 	<li><div class="cat-panel">

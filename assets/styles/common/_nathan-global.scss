@@ -1,42 +1,27 @@
-/*@mixin hook-panel-box( $background: $panel-box-background-primary) {
-background: $background;
 
-}*/
 
 .uk-navbar-flip {
 	a {
-	color: $dark-neutral!important;
+	color: $text-darker!important;
 	}
 }
 
 .uk-navbar-flip>li>a:active,
 .uk-navbar-flip>li>a:hover {
-	color: $white!important;
+	color: text-light!important;
 }
 
-.wrap .content .main {
-	padding-bottom: 3em;
+#menu-right-1 li {
+	@extend uk-width-1-3;
 }
 
 // HEADERS 
 
 h4 a {
-	color: $dark-neutral;
+	color: $neutral-dark;
 }
 
 
-.uk-panel-box-primary {
-	background-blend-mode: multiply;
-}
-.uk-panel-box {
-	background: $panel-box-background;
-	background-blend-mode: multiply;
-}
-
-.uk-panel-box-primary {
-background: $panel-box-background-primary;
-background-blend-mode: multiply;
-}
 
 // BUTTONS 
 
@@ -56,10 +41,12 @@ background-blend-mode: multiply;
 		
 	}
 	li a {
-		color: $white;
+		color: text-light;
 		padding: 3px 6px;
+		border-radius: $radius;
+		display: block;
 		&:hover {
-		@extend %blue-crush;
+		@include block-colours($blue-crush, $text-light);
 	}
 	}
 }
@@ -68,51 +55,50 @@ background-blend-mode: multiply;
 	@extend %panel-primary-list;	
 }
 
-.uk-panel-box li {
 
-}
+// FOOTER
 
-footer section.widget {
-	background: none;
-}
+@mixin footer-colours(){
+	 @include block-colours($orange-crush, $text-light);
+	 	}
+
+
 
 footer {
-	@extend %orange-crush;
-	@extend %panel-primary-list;
-	h3 {
-		color: $white;
+	@include footer-colours;
+	h3, a {
+		color: $text-light;
 	}
+	.strapline {
+		text-align: center;
+		font-size: 1.8em;
+		@include block-colours($dark-orange, $text-light);
+		}
+		
+	section.widget {
+		background: none;
+	}
+	
 }
 
 
-footer .strapline {
-	text-align: center;
-	font-size: 1.8em;
-}
 
 .credits {
 	text-align: center;
 	display: block;
+	font-size: 80%;
 	a {
-	color:  $white;
-}
+	color:  text-light;
+	}
 }
  
-.pagenav li {
-	// flex-grow: 1;
-	// flex-basis: 0px;
-	div {
-		@extend %orange-crush;
-		// height:  %half-height;
-		align-items: stretch;
-		&:hover {
-		@extend %grey-blanket;
-		}
+/*.pagenav li {
+	@extend %orange-crush;
+	// height:  %half-height;
+	&:hover {
+	@extend %grey-blanket;
 	}
-
-}
-
-
+}*/
 
 
 
@@ -133,5 +119,4 @@ footer .strapline {
 	background:  none;
 	}
 }
-
 

@@ -31,7 +31,7 @@
     </div>
   <!-- Phone menu -->
   
-    <div class="uk-width-medium-1-4"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
+    <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
     
 
 
@@ -42,12 +42,13 @@
         wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
       endif;
       ?>
-
+<!--<div class="uk-width-medium-1-4">-->
       <?php
       if (has_nav_menu('right_navigation')) :
         wp_nav_menu(['theme_location' => 'right_navigation', 'menu_class' => 'uk-navbar-flip nav']);
       endif;
       ?>
+      <!--<div class="uk-width-medium-1-4">-->
     </nav>
 
   </div>
@@ -61,7 +62,7 @@ if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
       //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
   echo do_shortcode ('[new_royalslider id="1"]');
 
-   echo ("</div></div>");
+   echo ("</div></div></div>");
 }
 
 ?>

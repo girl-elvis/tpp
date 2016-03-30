@@ -68,7 +68,7 @@
 	// News Loop of 4
 	?>
 
-<h2>News</h2><div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.cat-panel'}">
+<h2>News</h2><div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}">
 
 <?php
 	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category_name' => 'news', 'post_status' => 'publish' );
@@ -76,7 +76,7 @@
 	foreach ( $postslist as $post ) :
 	  setup_postdata( $post ); ?> 
 	<div class="">
-		<div class="cat-panel">
+		<div class="uk-panel">
 			<div class="uk-panel-teaser">
 				<?php 
 		        if ( has_post_thumbnail() ) {

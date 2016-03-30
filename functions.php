@@ -45,26 +45,16 @@ function is_child( $page_id_or_slug ) { // $page_id_or_slug = The ID of the page
 };
 
 
+add_filter( 'wpseo_breadcrumb_output', 'custom_wpseo_breadcrumb_output' );
+function custom_wpseo_breadcrumb_output( $output ){
 
+  if (is_singular("person")) {
+        $from = '/person/';   
+        $to     = '/about-us/people/';
+        $output = str_replace( $from, $to, $output );
+    }
 
+    return $output;
 
-// function icon_class($classes, $item){
-//     if(your condition){ //example: you can check value of $item to decide something...
-//         $classes[] = 'my_class';
-//     }
-//     return $classes;
-// }
-
-// add_filter('nav_menu_css_class' , 'icon_class' , 10 , 2);
-
-// function my_special_nav_class( $classes, $item ) {
-
-//     if ( is_single() && $item->title == 'Blog' ) {
-//         $classes[] = 'special-class';
-//     }
-
-//     return $classes;
-
-// }
-
-// add_filter( 'nav_menu_css_class', 'my_special_nav_class', 10, 2 );
+}
+?>
