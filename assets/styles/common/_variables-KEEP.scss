@@ -1,0 +1,424 @@
+// Glyphicons font path - ICON FONTS IN DIST! Thsi path breaks the UK bower path :-)
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+
+// GRID STUFF */
+
+// $control-height: 265px;
+// %half-height: 6em;
+
+
+$radius: 4px;
+
+.container {
+	@extend .uk-container-center; // centres things
+	@extend $control-height;
+}
+
+
+// Colors
+$brand-primary:         #d45d00; // TPP Orange
+$brand-secondary: invert($brand-primary); // TPP Blue
+$brand-success: 		#36b939; // TPP Green
+
+$light-neutral: 		#e6e6e6;
+$dark-neutral: 			#878785;
+
+$white:					#f7f7f7;
+
+
+$brand-light: lighten( $brand-primary, 4 );
+$brand-lightest: lighten( $brand-primary, 10 );
+
+
+%texture-background { // not used alone, use orange crush, blue crush or grey blanket for effects.
+background-image: url('../images/textures/diagonal-noise.png');
+background-repeat: repeat;
+ background-blend-mode: multiply;	
+}
+
+%orange-crush {
+	@extend %texture-background;
+	background-color: lighten($brand-primary, 5%);
+	color: $white;
+}
+
+%blue-crush {
+	@extend %texture-background;
+	background-color: lighten($brand-secondary, 5%);
+	color: $white;
+}
+
+%grey-blanket {
+	@extend %texture-background;
+	background-color: lighten($dark-neutral, 5%);
+	color: $dark-neutral;
+}
+
+// Base
+
+$base-link-color: $brand-secondary;
+$base-link-hover-text-decoration: none;
+
+
+// Typography
+//
+
+@mixin gradient-horizontal-primary($start-color: $brand-primary, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+
+@mixin gradient-horizontal-neutral($start-color: $light-neutral, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+
+$global-color: #333333;
+$global-muted-color: #878785;
+$global-link-color: #2ba2ff; 
+$global-link-hover-color: #2079bf;
+
+
+// Main fonts
+%calibri {
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+}
+
+$base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+$navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+
+
+// Icons 
+
+[class*=uk-icon-] {
+	margin-right: 0.5ex;
+	font-size: 2em;
+}
+
+//
+// Buttons, Navs & Badges
+//
+
+$global-primary-background: #d45d00;
+$global-success-background: #36b939;
+$global-warning-background: #e9ae7f;
+
+a {
+	transition: all .1s ease-in-out;
+//	&:hover { transition: all .2s ease-in-out; }
+}
+
+// Headers 
+$base-h1-line-height: 1.8em;
+$base-heading-color: 	#727270;
+
+h1::after {
+	content: '';
+	display: block;
+	height:  5px;
+	@include gradient-horizontal-primary;
+}
+
+h2::after {
+	content: '';
+	display: block;
+	height:  5px;
+	@include gradient-horizontal-neutral;
+}
+
+// NAVBAR
+
+// Navbar links
+
+// $navbar-background:  #ff0000;
+$navbar-nav-hover-background: $brand-light;
+// $navbar-nav-color: #ff0000;
+$navbar-nav-hover-color: #fff;
+// $navbar-color:     #fff;
+$navbar-link-color: $brand-light;
+// $navbar-nav-font-weight: bold;
+
+
+%navbar-a {
+	display: inline;
+	padding: 7px 16px;
+	text-transform: uppercase;
+}
+
+// Navbar Mixins
+
+@mixin navbarColours($extend: true) {
+  @if $extend {
+    @extend %navbarColours;
+  }
+  @else {
+    @extend %orange-crush;
+  }
+}
+
+%navbarColours {
+  @include navbarColours($extend: false);
+  @extend %orange-crush;
+}
+
+
+// Navbar brand
+
+
+
+$navbar-brand-color: $dark-neutral;
+$navbar-brand-hover-color: $dark-neutral;
+
+a.brand {
+	// @extend .uk-navbar-brand;
+	color: $navbar-brand-color;
+}
+
+
+.uk-navbar-nav li {
+	// @include hook-navbar-nav;
+	@include navbarColours
+
+}
+
+.nav>li>a, .uk-navbar-nav>li>a,
+.nav>li>a:active, .uk-navbar-nav>li>a:active,
+ .nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
+	@extend %navbar-a;
+	//&:hover {
+	//@extend %texture-background;
+	//background: $navbar-nav-hover-background;
+	
+	//}
+}
+
+.nav>li.uk-open>a, .nav>li:hover>a, .nav>li>a:focus, .uk-navbar-nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus,
+.nav>li>a:active, .uk-navbar-nav>li>a:active {
+	@extend %texture-background;
+	border-radius: $radius;
+}
+
+
+$navbar-background: none; // whole bar
+$navbar-nav-color: $white; // nav li a link text colour
+$navbar-nav-hover-color: $navbar-nav-color; // nav li a hover color
+$navbar-nav-hover-background: none; // nav li a hover bg
+$navbar-nav-onclick-background: $navbar-nav-hover-background;
+$navbar-nav-onclick-color: $navbar-nav-color;
+
+
+.nav-primary ul li:first-child, &:first-child:hover, &:first-child:active {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;	
+}
+
+.nav-primary ul li:first-child {
+	padding-left: 3px;
+}
+
+.nav-primary ul li:last-child, &:last-child:hover, &:last-child:active  {
+	border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+.nav-primary ul li:last-child {
+	padding-right: 3px;
+}
+
+.nav>li>a:active, .uk-navbar-nav>li>a:active,
+.nav>li>a:hover, .uk-navbar-nav>li>a:hover {
+	background: lighten($dark-neutral, 5%) url('../images/textures/diagonal-noise.png');
+}
+
+.uk-navbar-flip>li {
+	background-color: lighten($light-neutral, 5%);
+}
+
+.uk-navbar-flip li a {
+color: $dark-neutral;
+&:hover {
+@extend %blue-crush;
+	}	
+}
+
+.uk-navbar-flip>li>a:hover {
+	// @extend %blue-crush;
+	
+}
+
+
+// pagenav 
+
+.pagenav li {
+	@extend .uk-width-1-4;
+	extend: %orange-crush;
+	a {
+	color: $white;
+	}
+}
+
+
+// FONT STUFF
+
+$font-size: 16px;
+$line-height: $font-size * 1.6;
+$h1-size: $font-size * 2; // all other fonts are related to $font-size.
+
+// NATHAN'S STUFF FOR GLOBAL LATER
+
+body {
+color: $global-color;
+ @extend %calibri;
+}
+
+.banner {
+	padding: 18px 0;
+}
+
+a.brand {
+	font-size: 1.8em;
+	// color: $dark-neutral;
+}
+
+.banner .container:before {
+    content: url('../images/tpp-logo.png');
+    margin: -8px 0 0 -58px;
+    position: absolute;
+}
+
+.strapline {
+	font-size: 1.1em;
+	line-height: 1.8em;
+	color: $light-neutral;
+	padding-bottom: 10px;
+}
+
+.banner .strapline::after {
+	display: block;
+	padding-bottom: 12px;
+}
+
+
+/* BUTTONS */
+
+// $button-font-size:                               1rem !default;
+$button-background:                              $brand-secondary;
+$button-color:                                   $white;
+$button-hover-background:                        darken($brand-secondary, 30%);
+$button-hover-color:                             $button-color;
+$button-active-background:                       #ddd !default;
+$button-active-color:                            #444 !default;
+
+
+%cta {
+	background: $brand-secondary;
+	border-radius: $radius;
+	color: $white;
+	padding: 0.5em 6.5%;
+	text-transform: uppercase;
+	&:hover {
+	text-decoration: none;
+	}
+	
+}
+
+.button,
+.uk-button {
+	@extend %cta;
+	&:hover {
+	background-color: darken($brand-secondary, 30%);
+	color: $white;
+	// background-color: scale-color($brand-primary, $lightness: –10%);
+	}
+}
+
+// PANELS
+
+
+
+// $panel-box-padding:                              15px !default;
+$panel-box-background:                           lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
+$panel-box-color:                                $dark-neutral;
+$panel-box-hover-color:                          $brand-primary;
+$panel-box-title-color:                          $white;
+
+// $panel-box-background:                           lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
+$panel-box-primary-color:                        $white;
+// $panel-box-primary-hover-color:                  $panel-box-primary-color;
+$panel-box-primary-title-color:                  $white;
+
+$panel-header-title-color: $white;
+
+$panel-box-background-primary: lighten($brand-primary, 5%) url('../images/textures/diagonal-noise.png');
+
+
+// ACCORDIONS & ASSORTED INSTRUMENTS
+
+$accordion-title-margin-bottom:                  5px;
+// $accordion-title-padding-vertical:               5px !default;
+$accordion-title-padding-horizontal:             15px;
+$accordion-title-font-size:                      24px;
+// $accordion-title-line-height:                    24px !default;
+$accordion-title-background:                     lighten($light-neutral, 5%) url('../images/textures/diagonal-noise.png');
+$accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
+$accordion-content-padding-horizontal:           2em;
+$accordion-content-padding-bottom:               3em;
+
+.uk-accordion-title.uk-active {
+	background: $accordion-title-background-active;
+}
+
+
+
+.uk-accordion-content {
+    padding: $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
+    li {
+    list-style: none;
+    margin-left: 2em;
+    }
+}
+
+// TABS
+
+%tabs {
+	border-radius: $radius $radius 0 0;
+}
+
+$tab-border: $brand-light;
+$tab-border-width: 3px;
+
+$tab-color: $global-color;
+$tab-hover-color: $tab-color;
+
+$tab-hover-background: $light-neutral;
+$tab-active-background: $brand-light;
+$tab-active-border: $tab-active-background;
+$tab-active-color: $white;
+$tab-hover-border:  $light-neutral;         
+$tab-hover-background: $light-neutral;
+
+/*@mixin hook-tab(){
+// @extend %orange-crush;
+}
+@mixin hook-tab-hover(){}
+@mixin hook-tab-active(){}
+@mixin hook-tab-disabled(){}
+@mixin hook-tab-misc(){}*/
+
+
+
