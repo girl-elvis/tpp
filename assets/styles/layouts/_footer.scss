@@ -18,9 +18,11 @@ footer {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.uk-panel-box-primary {
 	    background: #ee6800;
+	    background-image:url(dist/images/textures/ie-diagonal-noise.png);
 	}
 	.nav li, .pagenav li, .uk-navbar-nav li, footer {
    		background: #ee6800;
+   	    background-image:url(dist/images/textures/ie-diagonal-noise.png);
    		color: #f7f7f7;
 	}
 	.uk-navbar-flip>li {
