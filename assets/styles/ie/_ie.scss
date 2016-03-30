@@ -4,10 +4,13 @@
         background-color: #ee6800;
         background-image:url(../images/textures/ie-diagonal-noise.png);
     }
-    .nav li, .pagenav li, .uk-navbar-nav li, footer {
+    .nav li, .pagenav li, footer {
         background-color: #ee6800;
         background-image:url(../images/textures/ie-diagonal-noise.png);
         color: #f7f7f7;
+    }
+    .uk-navbar-nav li {
+        background-image:url(../images/textures/diagonal-noise.png);
     }
     .uk-navbar-flip>li {
         background-color: #f3f3f3;
