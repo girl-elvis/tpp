@@ -21,10 +21,14 @@ $sidebar-sm-columns:    4;
 // %half-height: 6em;
 
 
+<<<<<<< HEAD
 .container {
 	@extend .uk-container-center; // centres things
 	// @extend $control-height;
 }
+=======
+
+>>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
 
 // Colors
 
@@ -273,6 +277,7 @@ a.brand {
 
 // pagenav 
 
+<<<<<<< HEAD
 .pagenav li {
 	@extend .uk-width-1-4;
 	extend: %orange-crush;
@@ -280,6 +285,15 @@ a.brand {
 	color: $text-light;
 	}
 }
+=======
+// .pagenav li div{
+// 	//@extend .uk-width-1-4;
+// 	extend: %orange-crush;
+// 	a {
+// 	color: $white;
+// 	}
+// }
+>>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
 
 
 // FONT STUFF
@@ -296,8 +310,14 @@ color: $global-color;
 }
 
 .banner {
-	padding: 18px 0;
+	padding-top: 18px;
 }
+@media only screen and (min-width : 768px){
+	.banner {
+		padding-bottom: 18px;
+	}
+}
+
 
 a.brand {
 	font-size: 1.8em;
@@ -313,8 +333,13 @@ a.brand {
 .strapline {
 	font-size: 1.1em;
 	line-height: 1.8em;
+<<<<<<< HEAD
 	color: $text-light;
 	padding-bottom: 10px;
+=======
+	color: $light-neutral;
+	// padding-bottom: 10px;
+>>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
 }
 
 .banner .strapline::after {

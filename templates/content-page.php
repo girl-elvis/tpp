@@ -10,7 +10,7 @@ if (is_page("a-z-of-tests") ){
     	include(locate_template('templates/partial-atoz.php'));
 }
 
-if (is_page("partners") ){
+if (is_page("about-us") ){
 	 $menuParameters = array(
 		'menu' => 'Partners', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'partners',		
 		);     
@@ -19,7 +19,9 @@ if (is_page("partners") ){
 
 if (is_page("staff") ){ // Adds Staff News to page. 	
    	include(locate_template('templates/partial-staffnews.php'));
-} 
+} elseif (is_page("people")){
+   	include(locate_template('templates/partial-people.php'));	
+}
 
 if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page. 
    	//include(locate_template('templates/partial-tabs.php'));

@@ -36,8 +36,10 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'cat-single', 240, 190, true ); 
+    add_image_size( 'portrait-sq', 300, 300, true ); 
+  add_image_size( 'cat-single', 410, 360, true ); 
   add_image_size( 'cat-double', 720, 410, true );
+
  
 
   // Enable post formats
@@ -85,6 +87,8 @@ function display_sidebar() {
   static $display;
 
   isset($display) || $display = in_array(true, [
+    // EMF: CHANGED TO ADD WHICH ONES WE WANT RATHER THAN REMOVE THOSE WE DON'T.
+
     // The sidebar will be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
 

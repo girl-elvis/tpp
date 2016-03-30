@@ -1,0 +1,85 @@
+/*Some fixes that make the site very basically useful on <= ie8*/
+
+.alert-warning {
+    background: #8b0000;
+    color: #fff;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.uk-panel-box-primary {
+    background: #ee6800;
+    background-image:url(dist/images/textures/ie-diagonal-noise.png);
+}
+
+.nav li, .pagenav li, .uk-navbar-nav li, footer {
+    background: #ee6800;
+    background-image:url(dist/images/textures/ie-diagonal-noise.png);
+    color: #f7f7f7;
+}
+
+.menu-right-container li {
+    background-image:url(dist/images/textures/diagonal-noise.png);
+}
+
+
+
+.uk-navbar-flip>li {
+    background-color: #f3f3f3;
+}
+
+.banner {
+    position: relative;
+    left: 0;
+}
+
+/*this is as specific as I can get trying to hide the menu button*/
+.container > .uk-grid > .uk-visible-small {
+    display: none;
+}
+
+.container > .uk-grid > a.cta {
+    width: 23%;
+    margin-bottom: 10px;
+}
+
+.wrap > .content > h2{
+    float: none;
+    clear: left;
+    margin-top: 70px;
+}
+
+.wrap.container > div > p > a.button {
+    white-space: nowrap;
+}
+
+.uk-panel-box-primary {
+    background: #ee6800;
+    background-image:url(dist/images/textures/ie-diagonal-noise.png);
+}
+
+.wrap .content {
+    margin-left: -50px;
+}
+
+.content .uk-grid {
+    width: 100%;
+}
+
+.content > .uk-grid > div{
+    width: 50%;
+}
+
+.content .menu-submenu-services-container,
+.content .menu-submenu-about-container,
+.content .menu-submenu-patients-container,
+.content .menu-submenu-news-container,
+.content .menu-submenu-gps-container,
+.content .menu-submenu-joinus-container{
+    float: none;
+}
+
+
+.content .page-header {
+    float: none;
+}
