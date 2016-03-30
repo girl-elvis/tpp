@@ -18,6 +18,12 @@
     color: #f7f7f7;
 }
 
+.menu-right-container li {
+    background-image:url(dist/images/textures/diagonal-noise.png);
+}
+
+
+
 .uk-navbar-flip>li {
     background-color: #f3f3f3;
 }
