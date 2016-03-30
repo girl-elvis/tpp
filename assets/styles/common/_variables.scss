@@ -64,7 +64,8 @@ $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repe
 
 // Base
 
-$base-link-color: $text-light;
+$base-link-color: $text-dark;
+$base-link-hover-color: $brand-secondary;
 $base-link-hover-text-decoration: none;
 
 @mixin hook-base-link(){
@@ -72,7 +73,7 @@ $base-link-hover-text-decoration: none;
 }
 
 @mixin hook-base-link-hover(){
-	
+	// background: $neutral-light;
 }
 
 
@@ -91,7 +92,7 @@ $base-link-hover-text-decoration: none;
 
 // neutral gradient
 
-@mixin gradient-horizontal-neutral($start-color: $neutral-light, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+@mixin gradient-horizontal-neutral($start-color: $neutral, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
   background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
@@ -169,6 +170,10 @@ h2::after {
 	@include gradient-horizontal-neutral;
 }
 
+
+h3 a {
+	color: $text-light;
+}
 // NAVBAR
 
 
