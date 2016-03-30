@@ -5,26 +5,50 @@
 
 
 <?php
+
+if (is_page("login") ){
+
+		$args = array(
+      'remember'       => true,
+      'redirect'       => (is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . htmlspecialchars($_GET['redirect_to']),
+      'form_id'        => 'loginform',
+      'id_username'    => 'user_login',
+      'id_password'    => 'user_pass',
+      'id_remember'    => 'rememberme',
+      'id_submit'      => 'wp-submit',
+      'label_username' => __( 'Username' ),
+      'label_password' => __( 'Password' ),
+      'label_remember' => __( 'Remember Me' ),
+      'label_log_in'   => __( 'Log In' ),
+      'value_username' => '',
+      'value_remember' => false
+    );
+
+		wp_login_form($args);
+}
+
 if (is_page("a-z-of-tests") ){
     	$post_type = "jargon";
     	include(locate_template('templates/partial-atoz.php'));
 }
 
-if (is_page("partners") ){
+if (is_page("about-us") ){
 	 $menuParameters = array(
-		'menu' => 'Partners', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'partners',		
-		);     
+		'menu' => 'Partners', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'partners',
+		);
     echo (wp_nav_menu( $menuParameters ) );
 }
 
-if (is_page("staff") ){ // Adds Staff News to page. 	
+if (is_page("staff") ){ // Adds Staff News to page.
    	include(locate_template('templates/partial-staffnews.php'));
-} 
+} elseif (is_page("people")){
+   	include(locate_template('templates/partial-people.php'));
+}
 
-if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page. 
+if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page.
    	//include(locate_template('templates/partial-tabs.php'));
    	get_template_part('templates/partial', 'tabs');
-} 
+}
 
 
 
