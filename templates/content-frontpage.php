@@ -4,7 +4,7 @@
 
 	// Get homepage boxes
 ?>
-<div class="uk-grid cat-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.cat-panel'}">
 	<div class="cat-half">
 		<div class="cat-panel">
 
@@ -68,14 +68,14 @@
 	// News Loop of 4
 	?>
 
-<h2>News</h2><div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
+<h2>News</h2><div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.cat-panel'}">
 
 <?php
 	$args = array( 'posts_per_page' => 4, 'order'=> 'ASC', 'category_name' => 'news', 'post_status' => 'publish' );
 	$postslist = get_posts( $args );
 	foreach ( $postslist as $post ) :
 	  setup_postdata( $post ); ?> 
-	<div class="uk-width-1-1 uk-width-medium-1-2 uk-width-large-1-4">
+	<div class="">
 		<div class="cat-panel">
 			<div class="uk-panel-teaser">
 				<?php 

@@ -99,12 +99,20 @@ footer .strapline {
 }
  
 .pagenav li {
-	@extend %orange-crush;
-	// height:  %half-height;
-	&:hover {
-	@extend %grey-blanket;
+	// flex-grow: 1;
+	// flex-basis: 0px;
+	div {
+		@extend %orange-crush;
+		// height:  %half-height;
+		align-items: stretch;
+		&:hover {
+		@extend %grey-blanket;
+		}
 	}
+
 }
+
+
 
 
 
@@ -127,10 +135,3 @@ footer .strapline {
 }
 
 
-
-
-	
-.uk-width-medium-1-1 {
-        margin-bottom: 1em;
-
-}

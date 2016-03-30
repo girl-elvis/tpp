@@ -14,10 +14,7 @@ $sidebar-sm-columns:    4;
 // %half-height: 6em;
 $radius: 4px;
 
-.container {
-	@extend .uk-container-center; // centres things
-	@extend $control-height;
-}
+
 
 
 // Colors
@@ -266,13 +263,13 @@ color: $dark-neutral;
 
 // pagenav 
 
-.pagenav li {
-	@extend .uk-width-1-4;
-	extend: %orange-crush;
-	a {
-	color: $white;
-	}
-}
+// .pagenav li div{
+// 	//@extend .uk-width-1-4;
+// 	extend: %orange-crush;
+// 	a {
+// 	color: $white;
+// 	}
+// }
 
 
 // FONT STUFF
@@ -289,8 +286,14 @@ color: $global-color;
 }
 
 .banner {
-	padding: 18px 0;
+	padding-top: 18px;
 }
+@media only screen and (min-width : 768px){
+	.banner {
+		padding-bottom: 18px;
+	}
+}
+
 
 a.brand {
 	font-size: 1.8em;
@@ -307,7 +310,7 @@ a.brand {
 	font-size: 1.1em;
 	line-height: 1.8em;
 	color: $light-neutral;
-	padding-bottom: 10px;
+	// padding-bottom: 10px;
 }
 
 .banner .strapline::after {
