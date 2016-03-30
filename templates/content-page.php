@@ -5,6 +5,7 @@
 
 
 <?php
+
 if (is_page("a-z-of-tests") ){
     	$post_type = "jargon";
     	include(locate_template('templates/partial-atoz.php'));

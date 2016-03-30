@@ -61,7 +61,7 @@ if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
       //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
   echo do_shortcode ('[new_royalslider id="1"]');
 
-   echo ("</div></div>");
+   echo ("</div></div></div>");
 }
 
 ?>
