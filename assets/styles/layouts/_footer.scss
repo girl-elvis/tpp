@@ -12,19 +12,3 @@ footer {
 
 	
 }
-
-
-	
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.uk-panel-box-primary {
-	    background: #ee6800;
-	}
-	.nav li, .pagenav li, .uk-navbar-nav li, footer {
-   		background: #ee6800;
-   		color: #f7f7f7;
-	}
-	.uk-navbar-flip>li {
-    	background-color: #f3f3f3;
-	}
-}
-
