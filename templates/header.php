@@ -31,7 +31,7 @@
     </div>
   <!-- Phone menu -->
   
-    <div class="uk-width-medium-1-4"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
+    <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
     
 
 
