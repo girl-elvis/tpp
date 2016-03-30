@@ -15,6 +15,7 @@ footer {
 
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	/* IE10 and higher CSS styles go here */
 	.uk-panel-box-primary {
 	    background-color: #ee6800;
 	    background-image:url(dist/images/textures/ie-diagonal-noise.png);
