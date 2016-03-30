@@ -21,14 +21,6 @@ $sidebar-sm-columns:    4;
 // %half-height: 6em;
 
 
-<<<<<<< HEAD
-.container {
-	@extend .uk-container-center; // centres things
-	// @extend $control-height;
-}
-=======
-
->>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
 
 // Colors
 
@@ -36,8 +28,13 @@ $brand-primary:         #d45d00; // TPP Orange
 $brand-secondary: invert($brand-primary); // TPP Blue
 $brand-success: 		#36b939; // TPP Green
 
-$neutral-light: 		#e6e6e6;
-$neutral-dark: 			#878785;
+$secondary-darker: darken($brand-secondary, 30%);
+$secondary-lighter: lighten($brand-secondary, 10%);
+
+$neutral:  				#878785;
+
+$neutral-light: 		lighten($neutral, 70%);
+$neutral-dark: 			darken($neutral, 20%);
 
 $text-light: 			#fff;
 $text-dark: 			$neutral-dark;
@@ -51,6 +48,7 @@ $primary-light: lighten( $brand-primary, 10 );
 
 $dark-orange: ($primary-dark url('../images/textures/diagonal-noise.png') repeat);
 $orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') repeat);
+$orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
 $blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
 $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
 
@@ -62,9 +60,6 @@ $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repe
 	 color: $colour;
 	 background-blend-mode: multiply;	 
 }
-
-
-
 
 
 // Base
@@ -84,6 +79,8 @@ $base-link-hover-text-decoration: none;
 // Typography
 //
 
+// Orange gradient
+
 @mixin gradient-horizontal-primary($start-color: $brand-primary, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
   background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
@@ -92,6 +89,7 @@ $base-link-hover-text-decoration: none;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
 
+// neutral gradient
 
 @mixin gradient-horizontal-neutral($start-color: $neutral-light, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
@@ -118,6 +116,17 @@ $global-link-hover-color: #2079bf;
 
 $base-heading-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+
+
+// BREADCRUMBS
+
+#breadcrumbs span a {
+	color: $text-dark;
+}
+.breadcrumb_last {
+color: $secondary-lighter;
+	
+}
 
 
 // Icons 
@@ -163,11 +172,7 @@ h2::after {
 // NAVBAR
 
 
-%navbar-a {
-	display: inline;
-	padding: 7px 16px;
-	text-transform: uppercase;
-}
+
 
 // Navbar Mixins
 
@@ -204,24 +209,19 @@ $navbar-toggle-icon:                             "\f0c9" !default;
 $navbar-toggle-icon-alt:                         "\f002" !default;
 
 
-// Navbar
-
-//@mixin navbar-buttons-hover($background, $colour) {
-//	 background: $background;
-//	 color: $colour;	
-// }
+//%navbar-a {
+//	display: inline;
+//	padding: 7px 16px;
+//	text-transform: uppercase;
+//}
 
 @mixin hook-navbar-nav(){
-}
-
-@mixin block-colours($background, $colour) {
-	 background: $background;
-	 color: $colour;
-	 background-blend-mode: multiply;	 
+	text-transform: uppercase;
 }
 
 @mixin hook-navbar-nav-hover(){
 	@include block-colours($navbar-nav-hover-background, $navbar-nav-hover-color);
+	
 }
 
 
@@ -235,7 +235,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 	border-radius: $radius;
 	background: $grey-blanket;
 	background-blend-mode: multiply;
-	@extend .uk-width-1-4;
+	// @extend .uk-width-1-4;
 }
 
 .uk-navbar-nav > li {
@@ -264,7 +264,6 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 // Navbar brand
 
 
-
 $navbar-brand-color: $neutral-dark;
 $navbar-brand-hover-color: $neutral-dark;
 
@@ -274,18 +273,17 @@ a.brand {
 }
 
 
-
 // pagenav 
 
-<<<<<<< HEAD
-.pagenav li {
+
+/*.pagenav li {
 	@extend .uk-width-1-4;
 	extend: %orange-crush;
 	a {
 	color: $text-light;
 	}
-}
-=======
+}*/
+
 // .pagenav li div{
 // 	//@extend .uk-width-1-4;
 // 	extend: %orange-crush;
@@ -293,7 +291,7 @@ a.brand {
 // 	color: $white;
 // 	}
 // }
->>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
+
 
 
 // FONT STUFF
@@ -312,11 +310,12 @@ color: $global-color;
 .banner {
 	padding-top: 18px;
 }
-@media only screen and (min-width : 768px){
+
+/*@media only screen and (min-width : 768px){
 	.banner {
 		padding-bottom: 18px;
 	}
-}
+}*/
 
 
 a.brand {
@@ -333,13 +332,9 @@ a.brand {
 .strapline {
 	font-size: 1.1em;
 	line-height: 1.8em;
-<<<<<<< HEAD
-	color: $text-light;
+
+	color: $neutral-light;
 	padding-bottom: 10px;
-=======
-	color: $light-neutral;
-	// padding-bottom: 10px;
->>>>>>> 4ca99e918464206f2ad8aeb993d45bebc341fea0
 }
 
 .banner .strapline::after {
@@ -394,11 +389,12 @@ $panel-title-text-transform:                     uppercase;
 
 // $panel-box-padding:                              15px !default;
 // $panel-box-background:                           #f5f5f5 !default;
+$panel-box-background: 							$grey-blanket;
 $panel-box-color:                                $text-light;
 $panel-box-hover-color:                          $panel-box-color !default;
 $panel-box-title-color:                          #444 !default;
-$panel-box-badge-top:                            10px !default;
-$panel-box-badge-right:                          $panel-box-badge-top !default;
+// $panel-box-badge-top:                            10px !default;
+// $panel-box-badge-right:                          $panel-box-badge-top !default;
 // $panel-box-teaser-margin:                        -$panel-box-padding !default;
 
 $panel-box-primary-background:                   $orange-crush;
@@ -406,7 +402,7 @@ $panel-box-primary-color:                        $text-light;
 $panel-box-primary-hover-color:                  $panel-box-primary-color !default;
 $panel-box-primary-title-color:                  $panel-box-primary-color;
 
-$panel-box-secondary-background:                 #eee !default;
+$panel-box-secondary-background:                 $orange-crush-lite;
 $panel-box-secondary-color:                      #444 !default;
 $panel-box-secondary-hover-color:                $panel-box-secondary-color !default;
 $panel-box-secondary-title-color:                #444 !default;
@@ -433,24 +429,59 @@ $panel-divider-border-width:                     1px !default;
 
 // $panel-body-padding:                             $panel-box-padding !default;
 
+ @mixin hook-panel-box() {
+ 	@include block-colours($panel-box-background, $panel-box-primary-color);
+ }
+@mixin hook-panel-box-primary(){
+	 @include block-colours($panel-box-primary-background, $panel-box-primary-color);
+	 	}
+	 	
+@mixin hook-panel-box-secondary(){
+	 @include block-colours($panel-box-secondary-background, $panel-box-primary-color);
+	 	}
+
+/*.cat-panel h4 {
+	   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 -10px;
+}
+*/
 
 // ACCORDIONS & ASSORTED INSTRUMENTS
+
 
 $accordion-title-margin-bottom:                  5px;
 // $accordion-title-padding-vertical:               5px !default;
 $accordion-title-padding-horizontal:             15px;
 $accordion-title-font-size:                      24px;
 // $accordion-title-line-height:                    24px !default;
-$accordion-title-background:                     lighten($neutral-light, 5%) url('../images/textures/diagonal-noise.png');
+$accordion-title-background:                     $grey-blanket;
 $accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
 $accordion-content-padding-horizontal:           2em;
 $accordion-content-padding-bottom:               3em;
+
+
+
+@mixin hook-accordion-title(){
+	 @include block-colours($accordion-title-background, $panel-box-primary-color);
+	 	}
+
 
 .uk-accordion-title.uk-active {
 	background: $accordion-title-background-active;
 }
 
-
+.uk-accordion ul {
+	@extend .uk-list-line;
+	display: block;
+	li {
+	display: block;
+	&:hover {
+	background: $neutral-light;
+		}
+	}
+}
 
 .uk-accordion-content {
     padding: $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
@@ -459,6 +490,27 @@ $accordion-content-padding-bottom:               3em;
     margin-left: 2em;
     }
 }
+
+
+.name_directory_index {
+	a {
+	font-size: 150%;
+	color: $text-light;
+	background: $secondary-darker;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 6px;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	line-height: 1em;
+	&:hover {
+	color: $text-light;
+	background: $brand-secondary;
+	}
+	}
+}
+
 
 // TABS
 
@@ -487,11 +539,7 @@ $tab-hover-background: $neutral-light;
 // @mixin hook-tab-disabled(){}
 // @mixin hook-tab-misc(){}*/
 
-// PANEL MIXINS
 
-@mixin hook-panel-box-primary(){
-	 @include block-colours($panel-box-primary-background, $panel-box-primary-color);
-	 	}
 
 // FOOTER MIXINS
 

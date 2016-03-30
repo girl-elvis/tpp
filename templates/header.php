@@ -34,8 +34,6 @@
     <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
     
 
-
-
     <nav class="nav-primary uk-navbar">
       <?php
       if (has_nav_menu('primary_navigation')) :
@@ -54,7 +52,7 @@
   </div>
 </header>
 
-<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs" class="container">','</div>');} 
+<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs" class="container">You are here: ','</div>');} 
 
 
 if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
