@@ -3,13 +3,14 @@
 <?php
 // Adds subnav to page header
 
+if(is_page("staff")){
+	// Move stuff from header to here.
+}
 if (is_page("patients") || is_child( 'patients')) {
-	$page ="patients";
 	$menu = 'Submenu: Patients';
 } elseif (is_page("our-services") || is_child( 'our-services')) {
 	$menu = 'Submenu: Services';
 } elseif (is_page("about-us") || is_child( 'about-us')) {
-	// EXTRA BLOCKS TO FILL SECOND ROW
 	$menu = 'Submenu: About';
   } elseif (is_page("gps") || is_child( 'gps')) {
 	$menu = 'Submenu: GPs';

@@ -55,12 +55,34 @@
 <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs" class="container">You are here: ','</div>');} 
 
 
+
+// ABOVE TITLE
 if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
-  echo ("<div class='container'><div class='uk-grid'><div class='cat-half'>");
+  echo ("<div class='container staffnav'><div class='uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small pagenav' data-uk-grid-match=\"{target:'.uk-panel'}\"><div class='cat-half'>");
       //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
+
   echo do_shortcode ('[new_royalslider id="1"]');
 
-   echo ("</div></div></div>");
+   echo ("</div>"); // close .cat-half
+   
+  $menu = 'Submenu: Staff';
+  $menuParameters = array(  
+    'before' => '<div class="uk-panel uk-panel-box uk-panel-box-secondary" ><i></i><h3>', 
+    'after'=>'</h3></div>', 
+    'echo' => false, 
+    'container' => "",
+    'items_wrap' => '%3$s', 
+  );  
+  $menuParameters['menu'] = $menu;
+    if (wp_get_nav_menu_object($menu)) {
+      //echo '<ul class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small pagenav" data-uk-grid-margin data-uk-grid-match="{target:\'.uk-panel\'}">';
+      echo (wp_nav_menu( $menuParameters ) );
+      //echo '</ul>';
+    }
+
+
+
+   echo ("</div></div>"); // close grid & container
 }
 
 ?>
