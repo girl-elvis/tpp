@@ -9,7 +9,7 @@
 
 .uk-panel-box-primary {
     background: #ee6800;
-    background-image:url(dist/images/textures/diagonal-noise.png);
+    background-image:url(dist/images/textures/ie-diagonal-noise.png);
 }
 
 .nav li, .pagenav li, .uk-navbar-nav li, footer {
@@ -27,24 +27,39 @@
 }
 
 /*this is as specific as I can get trying to hide the menu button*/
-body > .container > .cat-grid > button.uk-visible-small {
+.container > .uk-grid > .uk-visible-small {
     display: none;
 }
 
-body > .container > .cat-grid > div.uk-width-medium-1-4 > a.cta {
+.container > .uk-grid > a.cta {
     width: 23%;
     margin-bottom: 10px;
+}
+
+.wrap > .content > h2{
+    float: none;
+    clear: left;
+    margin-top: 70px;
+}
+
+.wrap.container > div > p > a.button {
+    white-space: nowrap;
+}
+
+.uk-panel-box-primary {
+    background: #ee6800;
+    background-image:url(dist/images/textures/ie-diagonal-noise.png);
 }
 
 .wrap .content {
     margin-left: -50px;
 }
 
-.content .cat-grid {
+.content .uk-grid {
     width: 100%;
 }
 
-.content > .cat-grid > div{
+.content > .uk-grid > div{
     width: 50%;
 }
 
