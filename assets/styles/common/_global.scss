@@ -86,15 +86,6 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 	list-style: none;
   padding-left: 15px;
 }
-.sidebar div{
-	background: $blue-crush;
-	a {
-		color:$neutral-dark;
-		&:hover {
-			color: $primary-medium;
-		}
-	}
-}
 
 
 // document download panels
