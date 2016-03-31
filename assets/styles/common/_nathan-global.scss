@@ -1,3 +1,12 @@
+.brand{
+	//@extend .uk-navbar-brand;
+}
+
+header.banner .cta {
+	margin-bottom: 10px;
+	// width: 100%;
+	text-align: center;
+}
 
 
 .uk-navbar-flip {
@@ -55,7 +64,22 @@ h4 a {
 	@extend %panel-primary-list;	
 }
 
+// SIDEBAR 
 
+.sidebar-primary .main {
+	border-right: 1px solid lighten($neutral,35%);
+}
+
+.sidebar div {
+	
+	// background: $blue-crush;
+	a {
+		color:$neutral-dark;
+		&:hover {
+			color: $primary-medium;
+		}
+	}
+}
 // FOOTER
 
 @mixin footer-colours(){
