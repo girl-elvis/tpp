@@ -57,4 +57,12 @@ function custom_wpseo_breadcrumb_output( $output ){
     return $output;
 
 }
+
+
+
+  
+
+
+
+
 ?>

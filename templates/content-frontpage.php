@@ -4,9 +4,9 @@
 
 	// Get homepage boxes
 ?>
-<div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.cat-panel'}">
+<div class="uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}">
 	<div class="cat-half">
-		<div class="cat-panel">
+		<div class="uk-panel">
 
 			<?php 
 
