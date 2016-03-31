@@ -38,12 +38,15 @@ if (is_page("about-us") ){
 		);
     echo (wp_nav_menu( $menuParameters ) );
 }
-
+ 
 if (is_page("staff") ){ // Adds Staff News to page.
-   	include(locate_template('templates/partial-staffnews.php'));
-} elseif (is_page("people")){
-   	include(locate_template('templates/partial-people.php'));
-}
+      include(locate_template('templates/partial-postgrid.php'));
+ } elseif (is_page("people")){
+     include(locate_template('templates/partial-people.php'));
+ }elseif (is_page("documents")){
+     include(locate_template('templates/partial-documents.php'));
+ }
+  
 
 if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page.
    	//include(locate_template('templates/partial-tabs.php'));

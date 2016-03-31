@@ -86,7 +86,7 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 	list-style: none;
   padding-left: 15px;
 }
-.sidebar {
+.sidebar div{
 	background: $blue-crush;
 	a {
 		color:$neutral-dark;
@@ -96,3 +96,27 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 	}
 }
 .staffnav .uk-grid {margin-top: 20px; margin-bottom: 40px;}
+
+// document download panels
+.docu-content{
+	height: 100%;
+	.uk-panel-title {
+		text-transform: none;
+		padding-bottom: 15px;		
+	}
+	a:last-child{
+		margin-top: auto;
+
+	}
+}
+
+// Page subnav
+.pagenav {
+	margin-top: 1em;
+	margin-bottom: 1em;
+		.uk-panel.uk-grid {
+		padding-left: 0; // gets padding from grid
+		margin-left: 0; // fix extra -25px from grid
+		i {font-size:3em}
+	}
+}

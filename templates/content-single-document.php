@@ -19,7 +19,7 @@ if( $file ):
   
 <div >
   <a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
-    <img src="<?php echo $icon; ?>" />
+    <i></i>
     <span><?php echo $title; ?></span>
   </a>  
   </div>

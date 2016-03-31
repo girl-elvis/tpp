@@ -58,7 +58,7 @@
 
 // ABOVE TITLE
 if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
-  echo ("<div class='container staffnav'><div class='uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small pagenav' data-uk-grid-match=\"{target:'.uk-panel'}\"><div class='cat-half'>");
+  echo ("<div class='container staffnav'><div class='uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small' data-uk-grid-match=\"{target:'.uk-panel'}\"><div class='cat-half'>");
       //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
 
   echo do_shortcode ('[new_royalslider id="1"]');

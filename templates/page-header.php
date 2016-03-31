@@ -19,7 +19,7 @@ if (is_page("patients") || is_child( 'patients')) {
 
 if($menu){
 	$menuParameters = array(	
-		'before' => '<div class="uk-panel uk-panel-box uk-panel-box-secondary" ><i></i><h3>', 
+		'before' => '<div class="uk-panel uk-panel-box uk-panel-box-secondary uk-grid" ><div class=" uk-width-medium-1-4"><i class="uk-icon-cog"></i></div><h3 class="uk-width-medium-3-4">', 
 		'after'=>'</h3></div>', 
 		'echo' => false, 
 		'container' => "",
