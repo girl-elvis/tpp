@@ -32,6 +32,7 @@ $secondary-darker: darken($brand-secondary, 30%);
 $secondary-lighter: lighten($brand-secondary, 10%);
 
 $neutral:  				#878785;
+$neutral-2: 			#cec9c9;
 
 $neutral-light: 		lighten($neutral, 70%);
 $neutral-dark: 			darken($neutral, 20%);
@@ -51,6 +52,7 @@ $orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') rep
 $orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
 $blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
 $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
+$dark-grey-blanket: ($neutral url('../images/textures/diagonal-noise.png') repeat);
 
 
 // Block colours
@@ -67,6 +69,7 @@ $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repe
 $base-link-color: $text-dark;
 $base-link-hover-color: $brand-secondary;
 $base-link-hover-text-decoration: none;
+$base-h1-line-height: 1.3em;
 
 @mixin hook-base-link(){
 	
@@ -120,6 +123,7 @@ $navbar-nav-font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, san
 
 
 // BREADCRUMBS
+
 
 #breadcrumbs span a {
 	color: $text-dark;
@@ -189,27 +193,31 @@ $navbar-link-hover-color:                        $text-light;
 
 $navbar-nav-height:                              40px !default;
 $navbar-nav-line-height:                         $navbar-nav-height !default;
-$navbar-nav-padding-horizontal:                  15px !default;
+// $navbar-nav-padding-horizontal:                  15px !default;
 $navbar-nav-color:                               $text-light;
-$navbar-nav-font-size:                           14px !default;
-$navbar-nav-font-weight:                         normal !default;
+// $navbar-nav-font-size:                           14px !default;
+// $navbar-nav-font-weight:                         normal !default;
 
-$navbar-nav-hover-background:                    $grey-blanket;
-$navbar-nav-hover-color:                         $text-darker;
-$navbar-nav-onclick-background:                  #ddd !default;
-$navbar-nav-onclick-color:                       #444 !default;
-$navbar-nav-active-background:                   #f5f5f5 !default;
-$navbar-nav-active-color:                        #444 !default;
-$navbar-nav-subtitle-font-size:                  10px !default;
-$navbar-nav-subtitle-offset:                     2px !default;
+$navbar-nav-hover-background:                    $dark-grey-blanket;
+$navbar-nav-hover-color:                         $text-light;
 
-$navbar-brand-font-size:                         18px !default;
-$navbar-brand-color:                             #444 !default;
+$navbar-flip-nav-hover-background:                $blue-crush;
+$navbar-flip-nav-hover-color:                     $text-light;
+
+$navbar-nav-onclick-background:                  $grey-blanket;
+$navbar-nav-onclick-color:                       $text-light;
+$navbar-nav-active-background:                   $grey-blanket;
+$navbar-nav-active-color:                        $text-dark;
+// $navbar-nav-subtitle-font-size:                  10px !default;
+// $navbar-nav-subtitle-offset:                     2px !default;
+
+// $navbar-brand-font-size:                         18px !default;
+$navbar-brand-color:                             $text-dark;
 $navbar-brand-hover-color:                       #444 !default;
 
-$navbar-toggle-font-size:                        18px !default;
-$navbar-toggle-color:                            #444 !default;
-$navbar-toggle-hover-color:                      #444 !default;
+// $navbar-toggle-font-size:                        18px !default;
+// $navbar-toggle-color:                            #444 !default;
+// $navbar-toggle-hover-color:                      #444 !default;
 $navbar-toggle-icon:                             "\f0c9" !default;
 $navbar-toggle-icon-alt:                         "\f002" !default;
 
@@ -225,8 +233,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 }
 
 @mixin hook-navbar-nav-hover(){
-	@include block-colours($navbar-nav-hover-background, $navbar-nav-hover-color);
-	
+	@include block-colours($navbar-nav-hover-background, $navbar-nav-hover-color);	
 }
 
 
@@ -240,8 +247,17 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 	border-radius: $radius;
 	background: $grey-blanket;
 	background-blend-mode: multiply;
+	
 	// @extend .uk-width-1-4;
 }
+
+#menu-right-1 > li a:hover {
+		background: $blue-crush;
+		color: $text-light!important;
+}
+
+// Navbar fine-tuning
+
 
 .uk-navbar-nav > li {
 	border-right: 2px solid #fff;
@@ -337,8 +353,7 @@ a.brand {
 .strapline {
 	font-size: 1.1em;
 	line-height: 1.8em;
-
-	color: $neutral-light;
+	color: $neutral-2;
 	padding-bottom: 10px;
 }
 
@@ -408,17 +423,18 @@ $panel-box-primary-hover-color:                  $panel-box-primary-color !defau
 $panel-box-primary-title-color:                  $panel-box-primary-color;
 
 $panel-box-secondary-background:                 $orange-crush-lite;
-$panel-box-secondary-color:                      #444 !default;
-$panel-box-secondary-hover-color:                $panel-box-secondary-color !default;
-$panel-box-secondary-title-color:                #444 !default;
+$panel-box-secondary-hover-background: 			 $blue-crush;
+$panel-box-secondary-color:                      $text-light;
+$panel-box-secondary-hover-color:                $text-light;
+// $panel-box-secondary-title-color:                #444 !default;
 
-$panel-hover-padding:                            15px !default;
-$panel-hover-color:                              #444 !default;
-$panel-hover-hover-background:                   #f5f5f5 !default;
-$panel-hover-hover-color:                        #444 !default;
-$panel-hover-badge-top:                          10px !default;
-$panel-hover-badge-right:                        $panel-hover-badge-top !default;
-$panel-hover-teaser-margin:                      -$panel-hover-padding !default;
+// $panel-hover-padding:                            15px !default;
+// $panel-hover-color:                              #444 !default;
+$panel-hover-hover-background:                   $blue-crush;
+$panel-hover-hover-color:                        $text-light;
+// $panel-hover-badge-top:                          10px !default;
+// $panel-hover-badge-right:                        $panel-hover-badge-top !default;
+// $panel-hover-teaser-margin:                      $panel-hover-padding !default;
 
 $panel-header-title-padding:                     10px !default;
 $panel-header-title-border:                      #ddd !default;
@@ -434,16 +450,30 @@ $panel-divider-border-width:                     1px !default;
 
 // $panel-body-padding:                             $panel-box-padding !default;
 
- @mixin hook-panel-box() {
+ @mixin hook-panel-box(){
  	@include block-colours($panel-box-background, $panel-box-primary-color);
  }
 @mixin hook-panel-box-primary(){
 	 @include block-colours($panel-box-primary-background, $panel-box-primary-color);
 	 	}
 	 	
+	 		
 @mixin hook-panel-box-secondary(){
 	 @include block-colours($panel-box-secondary-background, $panel-box-primary-color);
 	 	}
+	 	
+// @mixin hook-panel-box-secondary-hover(){
+	// @include block-colours($blue-crush, $panel-box-primary-color);
+// }
+
+.uk-panel-box-secondary:hover {
+	@include block-colours($blue-crush, $panel-box-primary-color);
+
+}
+
+.uk-panel-box-secondary h3 a:hover {
+	color: $text-light;
+}
 
 /*.cat-panel h4 {
 	   overflow: hidden;
@@ -458,8 +488,8 @@ $panel-divider-border-width:                     1px !default;
 
 $accordion-title-margin-bottom:                  5px;
 // $accordion-title-padding-vertical:               5px !default;
-$accordion-title-padding-horizontal:             15px;
 $accordion-title-font-size:                      24px;
+$accordion-title-colour: 						$text-dark;
 // $accordion-title-line-height:                    24px !default;
 $accordion-title-background:                     $grey-blanket;
 $accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
@@ -469,31 +499,44 @@ $accordion-content-padding-bottom:               3em;
 
 
 @mixin hook-accordion-title(){
-	 @include block-colours($accordion-title-background, $panel-box-primary-color);
+	 @include block-colours($accordion-title-background, $accordion-title-colour);
 	 	}
 
-
+@mixin hook-accordion-content() {
+	margin-bottom: 14px;
+}
 .uk-accordion-title.uk-active {
-	background: $accordion-title-background-active;
+	@include block-colours($accordion-title-background-active, $text-light);
+	// background: $accordion-title-background-active;
 }
 
-.uk-accordion ul {
-	@extend .uk-list-line;
-	display: block;
-	li {
-	display: block;
+/*.uk-accordion ul {
+	// @extend .uk-list-line;
+	// display: block;
+	// li {
+	//display: block;
 	&:hover {
 	background: $neutral-light;
 		}
 	}
-}
+}*/
 
 .uk-accordion-content {
-    padding: $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
+    ul {
+    	@extend .uk-list-line;
+    	}
     li {
     list-style: none;
     margin-left: 2em;
+    font-size: 18px;
+    &:hover {
+    background: $neutral-light;
+    	}
     }
+}
+
+div.uk-accordion-content.uk-active {
+	 padding: 14px 0;
 }
 
 

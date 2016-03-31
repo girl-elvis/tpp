@@ -19,7 +19,8 @@
 
 	/* medium Devices, Tablets */
 	@media only screen and (min-width : 768px){
-			.pagenav {
+<<<<<<< HEAD
+		.pagenav {
 			i {font-size:3em;}
 			.uk-panel.uk-grid {
 				padding-top: 15px;
@@ -37,16 +38,18 @@
 		  }
 
 	 }
-
+=======
 	
- 	
+	
+ 	}
+>>>>>>> 5093cf4dfcaaac07d3dfae37b86103b8f9611932
  	
 	/* large Devices, Desktops */
 	@media only screen and (min-width : 992px){ 
 	
-		#breadcrumbs {
-			margin: 12px;
-		}
+	#breadcrumbs {
+		margin: 12px;
+	}
 
 	}
  
