@@ -1,6 +1,6 @@
 // sidebar
 .wrap .content {
-	@extend .uk-grid;
+	//@extend .uk-grid;
 	//@extend .uk-grid-match;
 	@extend %borderbox;
 	& > * {@extend %borderbox;}

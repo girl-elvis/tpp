@@ -8,38 +8,21 @@
 <?php 
 
 $file = get_field('file');
-var_dump($file); 
+
+
 if( $file ): 
   // vars
   $url = $file['url'];
   $title = $file['title'];
   $type = $file['mime_type'];
-
-  // icon
-  $icon = $file['icon'];
+?>
   
-  if( $file['type'] == 'image' ) {
-    
-    $icon =  $file['sizes']['thumbnail'];
-    
-  }
-  
-
-  if( $caption ): ?>
-
-    <div class="wp-caption">
-
-  <?php endif; ?>
-
+<div >
   <a href="<?php echo $url; ?>" title="<?php echo $title; ?>">
-
-    <img src="<?php echo $icon; ?>" />
+    <i></i>
     <span><?php echo $title; ?></span>
-
-  </a>
-
-  
-    </div>
+  </a>  
+  </div>
 
 
 
@@ -47,6 +30,7 @@ if( $file ):
 
 
       <?php the_content(); ?>
+
     </div>
     <footer>
       <?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>

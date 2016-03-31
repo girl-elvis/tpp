@@ -31,7 +31,7 @@
     </div>
   <!-- Phone menu -->
   
-    <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="">Contact us</a></div></div>
+    <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="<?= esc_url(home_url('/')); ?>contact-us">Contact us</a></div></div>
     
 
     <nav class="nav-primary uk-navbar">
@@ -55,12 +55,34 @@
 <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs">You are here: ','</div>');} 
 
 
+
+// ABOVE MAIN 
+
 if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
-  echo ("<div class='container'><div class='uk-grid'><div class='cat-half'>");
+  echo ("<div class='container staffnav pagenav'><div class='uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small'  data-uk-grid-margin  data-uk-grid-match=\"{target:'.uk-panel'}\"><div class='uk-panel cat-half '>");
       //get_template_part('templates/partial', 'magheader'); // MOVE TO partial
+
   echo do_shortcode ('[new_royalslider id="1"]');
 
-   echo ("</div></div></div>");
+   echo ("</div>"); // close .cat-half
+   
+  $menu = 'Submenu: Staff';
+  $menuParameters = array(  
+    'before' => '<div class="uk-panel uk-panel-box uk-panel-box-secondary  uk-grid uk-grid-small" ><div class=" uk-width-1-4"><i class="uk-icon-cog"></i></div><h3 class="uk-width-3-4">', 
+    'after'=>'</h3></div>', 
+    'echo' => false, 
+    'container' => "",
+    'items_wrap' => '%3$s', 
+  );  
+  $menuParameters['menu'] = $menu;
+    if (wp_get_nav_menu_object($menu)) {
+     echo (wp_nav_menu( $menuParameters ) );
+
+    }
+
+
+
+   echo ("</div></div>"); // close grid & container
 }
 
 ?>

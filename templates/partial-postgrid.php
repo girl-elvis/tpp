@@ -13,12 +13,12 @@ if (is_page("staff")) {
 $args = array( 'posts_per_page' => 6, 'post_type' => $pt);
 $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-	<li><div class="cat-panel">
+	<li><div class="uk-panel">
 		<div class="uk-panel-teaser">
 				<?php 
 		        if ( has_post_thumbnail() ) {
 
-					    the_post_thumbnail( '' );
+					    the_post_thumbnail( 'cat-single' );
 					} 
 					
 
