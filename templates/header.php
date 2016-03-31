@@ -4,10 +4,10 @@
 
   
 
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="smlogo"></span><?php bloginfo('name'); ?></a>
+    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="mq-logo"></span><span class="mq-brand"><?php bloginfo('name'); ?></span></a>
 
   <div class="uk-grid uk-grid-small" data-uk-grid-margin > 
-    <div class="strapline uk-width-5-6 uk-width-medium-3-4"><?php bloginfo('description'); ?></div>
+    <div class="strapline uk-width-5-6 uk-width-medium-3-4 mq-brand"><?php bloginfo('description'); ?></div>
   
 
       <div class="uk-width-1-6 uk-visible-small"><button class="uk-button uk-float-right" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button></div>
@@ -51,8 +51,8 @@
 
   </div>
 </header>
-
-<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs" class="container">You are here: ','</div>');} 
+<div class="container">
+<?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs">You are here: ','</div>');} 
 
 
 if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
