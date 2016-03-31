@@ -29,7 +29,9 @@ $brand-secondary: invert($brand-primary); // TPP Blue
 $brand-success: 		#36b939; // TPP Green
 
 $secondary-darker: darken($brand-secondary, 30%);
+$secondary-dark: darken($brand-secondary, 10%);
 $secondary-lighter: lighten($brand-secondary, 10%);
+$secondary-lightest: lighten($brand-secondary, 30%);
 
 $neutral:  				#878785;
 $neutral-2: 			#cec9c9;
@@ -51,6 +53,8 @@ $dark-orange: ($primary-dark url('../images/textures/diagonal-noise.png') repeat
 $orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') repeat);
 $orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
 $blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
+$blue-crush-lite: ($secondary-lightest url('../images/textures/diagonal-noise.png') repeat);
+$blue-crush-dark: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
 $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
 $dark-grey-blanket: ($neutral url('../images/textures/diagonal-noise.png') repeat);
 
@@ -72,13 +76,13 @@ $base-link-hover-text-decoration: none;
 $base-h1-line-height: 1.3em;
 
 @mixin hook-base-link(){
-	
 }
 
 @mixin hook-base-link-hover(){
 	// background: $neutral-light;
 }
 
+$utility-container-padding-horizontal: 0;
 
 // Typography
 //
@@ -179,8 +183,6 @@ h3 a {
 	color: $text-light;
 }
 // NAVBAR
-
-
 
 
 // Navbar Mixins
@@ -409,15 +411,18 @@ $panel-title-text-transform:                     uppercase;
 
 // $panel-box-padding:                              15px !default;
 // $panel-box-background:                           #f5f5f5 !default;
+
 $panel-box-background: 							$grey-blanket;
 $panel-box-color:                                $text-light;
 $panel-box-hover-color:                          $panel-box-color !default;
 $panel-box-title-color:                          #444 !default;
+
 // $panel-box-badge-top:                            10px !default;
 // $panel-box-badge-right:                          $panel-box-badge-top !default;
 // $panel-box-teaser-margin:                        -$panel-box-padding !default;
 
-$panel-box-primary-background:                   $orange-crush;
+$panel-box-primary-background:                   $blue-crush-dark;
+$panel-box-primary-hover-background:             $blue-crush-lite;
 $panel-box-primary-color:                        $text-light;
 $panel-box-primary-hover-color:                  $panel-box-primary-color !default;
 $panel-box-primary-title-color:                  $panel-box-primary-color;
@@ -426,12 +431,14 @@ $panel-box-secondary-background:                 $orange-crush-lite;
 $panel-box-secondary-hover-background: 			 $blue-crush;
 $panel-box-secondary-color:                      $text-light;
 $panel-box-secondary-hover-color:                $text-light;
-// $panel-box-secondary-title-color:                #444 !default;
+$panel-box-secondary-title-color:                $text-light;
 
 // $panel-hover-padding:                            15px !default;
 // $panel-hover-color:                              #444 !default;
+
 $panel-hover-hover-background:                   $blue-crush;
 $panel-hover-hover-color:                        $text-light;
+
 // $panel-hover-badge-top:                          10px !default;
 // $panel-hover-badge-right:                        $panel-hover-badge-top !default;
 // $panel-hover-teaser-margin:                      $panel-hover-padding !default;
@@ -453,11 +460,11 @@ $panel-divider-border-width:                     1px !default;
  @mixin hook-panel-box(){
  	@include block-colours($panel-box-background, $panel-box-primary-color);
  }
+ 
 @mixin hook-panel-box-primary(){
 	 @include block-colours($panel-box-primary-background, $panel-box-primary-color);
 	 	}
-	 	
-	 		
+	 		 		
 @mixin hook-panel-box-secondary(){
 	 @include block-colours($panel-box-secondary-background, $panel-box-primary-color);
 	 	}
@@ -466,14 +473,32 @@ $panel-divider-border-width:                     1px !default;
 	// @include block-colours($blue-crush, $panel-box-primary-color);
 // }
 
+.uk-panel-box-primary:hover {
+	@include block-colours($panel-box-primary-hover-background, $panel-box-primary-color);
+	a {
+	color: $text-light;
+	}
+
+}
+
 .uk-panel-box-secondary:hover {
 	@include block-colours($blue-crush, $panel-box-primary-color);
 
 }
 
-.uk-panel-box-secondary h3 a:hover {
-	color: $text-light;
+// Panel beating!
+
+.uk-panel-box {
+	@extend .uk-border-rounded;
 }
+
+.uk-panel-box-secondary h3 a:hover,
+.uk-panel-box-secondary a:hover,
+.docu-content a {
+color: $text-light;
+}
+
+
 
 /*.cat-panel h4 {
 	   overflow: hidden;

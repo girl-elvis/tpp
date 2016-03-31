@@ -23,7 +23,7 @@ foreach($custom_terms as $custom_term) {
         echo '<div class="uk-accordion-title">'.$custom_term->name.'</div> ';
         echo '<div class="uk-accordion-content uk-grid uk-grid-match uk-grid-width-medium-1-2 uk-grid-width-large-1-4 uk-grid-small" data-uk-grid-margin data-uk-grid-match="{target:\'.uk-panel\'}">';
         while($loop->have_posts()) : $loop->the_post();
-            echo '<div class=""><div class="uk-panel uk-panel-box uk-panel-box-secondary uk-align-center" >'; ?>
+            echo '<div class=""><div class="uk-panel uk-panel-box uk-panel-box-primary uk-align-center" >'; ?>
 
            
                 <?php 
