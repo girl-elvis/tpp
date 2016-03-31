@@ -32,12 +32,12 @@ if (is_page("jargon-buster") ){
     	include(locate_template('templates/partial-atoz.php'));
 }
 
-if (is_page("about-us") ){
-	 $menuParameters = array(
-		'menu' => 'Partners', 'before' => '', 'after'=>'', 'echo' => false, 'menu_class' => 'partners',
-		);
-    echo (wp_nav_menu( $menuParameters ) );
-}
+// if (is_page("about-us") ){
+// 	 $menuParameters = array(
+// 		'menu' => 'Partners', 'before' => $item->ID, 'after'=>'', 'echo' => false, 'menu_class' => 'partners',
+// 		);
+//     echo (wp_nav_menu( $menuParameters ) );
+// }
  
 if (is_page("staff") ){ // Adds Staff News to page.
       include(locate_template('templates/partial-postgrid.php'));

@@ -18,7 +18,7 @@ if( have_rows('tabs') ):  $i = 1;
 
 	echo '</ul><ul class="uk-switcher" id="blood">'; // finish tab titles, start tab contents
 	for ($k = 1; $k < ($i-1); $k++ ) {
-		   echo ('<li>' . ${'text_' . $k} . '</li>') ; 
+		   echo ('<li><p>' . ${'text_' . $k} . '</p></li>') ; 
 	}
 	echo '</ul>';
 

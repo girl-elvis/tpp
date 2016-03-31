@@ -95,7 +95,7 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 		}
 	}
 }
-.staffnav .uk-grid {margin-top: 20px; margin-bottom: 40px;}
+
 
 // document download panels
 .docu-content{
@@ -117,6 +117,27 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 		.uk-panel.uk-grid {
 		padding-left: 0; // gets padding from grid
 		margin-left: 0; // fix extra -25px from grid
-		i {font-size:3em}
+		padding-top: 5px;
+		padding-bottom: 5px;
+		i {font-size:2em}
+		h3{text-align: right;}
 	}
 }
+
+#breadcrumbs{margin-top: 10px;}
+
+//TEMP FIX
+
+#menu-partners a {
+	color: $primary-medium;
+	&:hover{
+		color: $base-link-hover-color;
+	}
+}
+#menu-partners li a div{
+	display: inline-block;
+	& + h3 {display: inline-block;}
+	//img {@extend .uk-width-1-6;}
+}
+
+figure{padding-right: 20px;}
