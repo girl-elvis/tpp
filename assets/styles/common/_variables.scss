@@ -31,7 +31,7 @@ $brand-success: 		#36b939; // TPP Green
 $secondary-darker: darken($brand-secondary, 30%);
 $secondary-dark: darken($brand-secondary, 10%);
 $secondary-lighter: lighten($brand-secondary, 10%);
-$secondary-lightest: lighten($brand-secondary, 30%);
+$secondary-lightest: lighten($brand-secondary, 33%);
 
 $neutral:  				#878785;
 $neutral-2: 			#cec9c9;
@@ -428,7 +428,7 @@ $panel-box-primary-hover-color:                  $panel-box-primary-color !defau
 $panel-box-primary-title-color:                  $panel-box-primary-color;
 
 $panel-box-secondary-background:                 $orange-crush-lite;
-$panel-box-secondary-hover-background: 			 $blue-crush;
+$panel-box-secondary-hover-background: 			 $blue-crush-lite;
 $panel-box-secondary-color:                      $text-light;
 $panel-box-secondary-hover-color:                $text-light;
 $panel-box-secondary-title-color:                $text-light;
@@ -482,14 +482,17 @@ $panel-divider-border-width:                     1px !default;
 }
 
 .uk-panel-box-secondary:hover {
-	@include block-colours($blue-crush, $panel-box-primary-color);
+	@include block-colours($panel-box-secondary-hover-background, $panel-box-primary-color);
+}
 
+.home .uk-panel-box-secondary:hover {
+	@include block-colours($panel-box-secondary-background, $panel-box-primary-color);
 }
 
 // Panel beating!
 
 .uk-panel-box {
-	@extend .uk-border-rounded;
+	// @extend .uk-border-rounded;
 }
 
 .uk-panel-box-secondary h3 a:hover,
