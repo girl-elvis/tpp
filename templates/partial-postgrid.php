@@ -17,11 +17,10 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 		<div class="uk-panel-teaser">
 				<?php 
 		        if ( has_post_thumbnail() ) {
-
+		        		echo "<a href='" . get_the_permalink() . "'>" ;
 					    the_post_thumbnail( 'cat-single' );
-					} 
-					
-
+					    echo "</a>";
+					} 					
 	    echo ("</div><h4><a href='" . get_the_permalink() . "'>" . get_the_title() . "</a></h4>");
 	    ?>
 	</div></li>

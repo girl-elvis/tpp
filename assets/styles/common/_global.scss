@@ -54,13 +54,16 @@ button {
 
 
 // Icons in page menus
-$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
+$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list';
 
 @each $i in $icons {
   li.#{$i} i {
     @extend .uk-icon-#{$i};
     font-family: FontAwesome;
   }
+}
+li.menu-item i {
+    font-family: FontAwesome;	
 }
 
 

@@ -40,7 +40,29 @@ function setup() {
   add_image_size( 'cat-single', 410, 360, true ); 
   add_image_size( 'cat-double', 720, 410, true );
 
- 
+
+// add_filter('image_size_names_choose', 'iwc_image_sizes');
+
+// function iwc_image_sizes($sizes) {
+//     $addsizes = array(
+//       "cat-single" => __( "Quarter page")
+//     );
+//   $newsizes = array_merge($sizes, $addsizes);
+//   return $newsizes;
+// }
+  
+
+if ( function_exists( 'add_image_size' ) ) {
+add_image_size( 'new-size', 350, 250, true ); //(cropped)
+}
+add_filter('image_size_names_choose', 'my_image_sizes');
+function my_image_sizes($sizes) {
+$addsizes = array(
+"new-size" => __( "New Size")
+);
+$newsizes = array_merge($sizes, $addsizes);
+return $newsizes;
+}
 
   // Enable post formats
   // http://codex.wordpress.org/Post_Formats
