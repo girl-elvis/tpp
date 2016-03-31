@@ -27,14 +27,14 @@ if (is_page("login") ){
 		wp_login_form($args);
 }
 
-if (is_page("a-z-of-tests") ){
+if (is_page("jargon-buster") ){
     	$post_type = "jargon";
     	include(locate_template('templates/partial-atoz.php'));
 }
 
 if (is_page("about-us") ){
 	 $menuParameters = array(
-		'menu' => 'Partners', 'before' => '<i></i><h3>', 'after'=>'</h3>', 'echo' => false, 'menu_class' => 'partners',
+		'menu' => 'Partners', 'before' => '', 'after'=>'', 'echo' => false, 'menu_class' => 'partners',
 		);
     echo (wp_nav_menu( $menuParameters ) );
 }
@@ -43,12 +43,12 @@ if (is_page("staff") ){ // Adds Staff News to page.
       include(locate_template('templates/partial-postgrid.php'));
  } elseif (is_page("people")){
      include(locate_template('templates/partial-people.php'));
- }elseif (is_page("documents")){
+ }elseif (is_page("hr")){
      include(locate_template('templates/partial-documents.php'));
  }
   
 
-if (is_page("going-for-a-bloodtest") ){ // Adds Staff News to page.
+if (is_page("going-for-a-bloodtest") ){ 
    	//include(locate_template('templates/partial-tabs.php'));
    	get_template_part('templates/partial', 'tabs');
 }
