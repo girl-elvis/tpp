@@ -53,7 +53,7 @@
 </header>
 <div class="container">
 <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb('<div id="breadcrumbs">You are here: ','</div>');} 
-
+echo "</div>";
 
 
 // ABOVE MAIN 
