@@ -128,16 +128,4 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o';
 
 //TEMP FIX
 
-#menu-partners a {
-	color: $primary-medium;
-	&:hover{
-		color: $base-link-hover-color;
-	}
-}
-#menu-partners li a div{
-	display: inline-block;
-	& + h3 {display: inline-block;}
-	//img {@extend .uk-width-1-6;}
-}
-
 figure{padding-right: 20px;}
