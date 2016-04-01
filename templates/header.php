@@ -1,13 +1,9 @@
 <header class="banner">
   <div class="container">
-  
-
-  
-
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="mq-logo"></span><span class="mq-brand"><?php bloginfo('name'); ?></span></a>
+     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="uk-visible-small"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/sm-logo.png" /></span><span class="uk-visible-medium"><img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/med-logo.png" /></span><span class="uk-visible-large"><?php bloginfo('name'); ?></span></a>
 
   <div class="uk-grid uk-grid-small" data-uk-grid-margin > 
-    <div class="strapline uk-width-5-6 uk-width-medium-3-4 mq-brand"><?php bloginfo('description'); ?></div>
+     <div class="strapline uk-width-5-6 uk-width-medium-3-4"><span class="uk-visible-large"><?php bloginfo('description'); ?></span></div>
   
 
       <div class="uk-width-1-6 uk-visible-small"><button class="uk-button uk-float-right" data-uk-offcanvas="{target:'#mobmenu'}">Menu</button></div>
@@ -86,4 +82,3 @@ if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
 }
 
 ?>
-

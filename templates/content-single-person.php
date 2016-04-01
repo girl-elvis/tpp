@@ -4,9 +4,14 @@
       <h1 class="entry-title"><?php the_title(); ?></h1>
     </header>
     <div class="entry-content">
-      <h2>
-<?php the_field('job_title'); ?>
-      </h2>
+      <?php if(get_field("job_title"))
+              echo ("<h2>" . get_field("job_title") . "</h2>");
+      
+            if ( has_post_thumbnail() ) {
+              echo "<div class='featuredimg'>";
+              the_post_thumbnail( 'cat-double' );
+              echo "</div>";
+            }                     ?>
       <?php the_content(); ?>
     </div>
     <footer>

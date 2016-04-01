@@ -54,7 +54,7 @@ button {
 
 
 // Icons in page menus
-$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list';
+$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list', 'task', 'thumbs-up-o', 'sitemap', 'users', 'gg', 'rocket';
 
 @each $i in $icons {
   li.#{$i} i {
@@ -63,7 +63,7 @@ $icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list';
   }
 }
 li.menu-item i {
-    font-family: FontAwesome;	
+    //font-family: FontAwesome;	
 }
 
 

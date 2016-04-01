@@ -49,12 +49,12 @@ $primary-dark:	darken( $brand-primary, 1 );
 $primary-medium: lighten( $brand-primary, 5 );
 $primary-light: lighten( $brand-primary, 10 );
 
-$dark-orange: ($primary-dark url('../images/textures/diagonal-noise.png') repeat);
-$orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') repeat);
-$orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush-lite: ($secondary-lightest url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush-dark: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
+$dark-orange: ($primary-dark );
+$orange-crush: ($primary-medium );
+$orange-crush-lite: ($primary-light );
+$blue-crush: ($brand-secondary );
+$blue-crush-lite: ($secondary-lighter );
+$blue-crush-dark: ($brand-secondary );
 $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
 $dark-grey-blanket: ($neutral url('../images/textures/diagonal-noise.png') repeat);
 
@@ -70,8 +70,8 @@ $dark-grey-blanket: ($neutral url('../images/textures/diagonal-noise.png') repea
 
 // Base
 
-$base-link-color: $text-dark;
-$base-link-hover-color: $brand-secondary;
+$base-link-color: $brand-secondary;
+$base-link-hover-color: $secondary-darker;
 $base-link-hover-text-decoration: none;
 $base-h1-line-height: 1.3em;
 
@@ -82,7 +82,7 @@ $base-h1-line-height: 1.3em;
 	// background: $neutral-light;
 }
 
-$utility-container-padding-horizontal: 0;
+//$utility-container-padding-horizontal: 0;
 
 // Typography
 //
@@ -200,7 +200,7 @@ $navbar-nav-color:                               $text-light;
 // $navbar-nav-font-size:                           14px !default;
 // $navbar-nav-font-weight:                         normal !default;
 
-$navbar-nav-hover-background:                    $dark-grey-blanket;
+$navbar-nav-hover-background:                    $orange-crush;
 $navbar-nav-hover-color:                         $text-light;
 
 $navbar-flip-nav-hover-background:                $blue-crush;
@@ -208,7 +208,7 @@ $navbar-flip-nav-hover-color:                     $text-light;
 
 $navbar-nav-onclick-background:                  $grey-blanket;
 $navbar-nav-onclick-color:                       $text-light;
-$navbar-nav-active-background:                   $grey-blanket;
+$navbar-nav-active-background:                   $orange-crush;
 $navbar-nav-active-color:                        $text-dark;
 // $navbar-nav-subtitle-font-size:                  10px !default;
 // $navbar-nav-subtitle-offset:                     2px !default;
@@ -241,7 +241,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 
 #menu-main-navigation-1 {
 	border-radius: $radius;
-	background: $orange-crush;
+	background: $dark-grey-blanket;
 	background-blend-mode: multiply;
 }
 
@@ -421,8 +421,8 @@ $panel-box-title-color:                          #444 !default;
 // $panel-box-badge-right:                          $panel-box-badge-top !default;
 // $panel-box-teaser-margin:                        -$panel-box-padding !default;
 
-$panel-box-primary-background:                   $blue-crush-dark;
-$panel-box-primary-hover-background:             $blue-crush-lite;
+$panel-box-primary-background:                   $blue-crush-lite;
+$panel-box-primary-hover-background:             $blue-crush-dark;
 $panel-box-primary-color:                        $text-light;
 $panel-box-primary-hover-color:                  $panel-box-primary-color !default;
 $panel-box-primary-title-color:                  $panel-box-primary-color;
@@ -520,7 +520,7 @@ $accordion-title-font-size:                      24px;
 $accordion-title-colour: 						$text-dark;
 // $accordion-title-line-height:                    24px !default;
 $accordion-title-background:                     $grey-blanket;
-$accordion-title-background-active: lighten($brand-primary, 10%) url('../images/textures/diagonal-noise.png');
+$accordion-title-background-active: $orange-crush-lite;
 $accordion-content-padding-horizontal:           2em;
 $accordion-content-padding-bottom:               3em;
 

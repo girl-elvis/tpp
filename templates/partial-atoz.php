@@ -47,7 +47,7 @@ foreach ( $lastposts as $post ) {
             if($state['needsclose'] == true) { echo '</div>'; $state['needsclose'] = false; } // yes, close the accordion content if it was open
             echo "<h3 class='uk-accordion-title' name='entry_{$state['nextLetter']}'>" . $state['nextLetter'] . "</h3>\r";  // then print the accordion title for the current letter
         	echo '<div class="uk-accordion-content">'; // print accordion content saying 'nothing here'
-            echo '  <div class="data-definition">There is nothing here</div>';
+            echo '  <div class="data-definition"> </div>';
             $state['needsclose'] = true; // remember to say that you just opened the accordion content div
         	$state['nextLetter']++;  // increment the next expected letter and go back to the top of this loop
         } // we've looped enough times and created an 'nothing here' box for the expected next letters that were not there
