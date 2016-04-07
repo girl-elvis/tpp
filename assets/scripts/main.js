@@ -27,6 +27,7 @@
     // Home page
     'home': {
       init: function() {
+        
         // JavaScript to be fired on the home page
       },
       finalize: function() {

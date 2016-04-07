@@ -54,7 +54,7 @@ button {
 
 
 // Icons in page menus
-$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list', 'task', 'thumbs-up-o', 'sitemap', 'users', 'gg', 'rocket';
+$icons: 'heart', 'calendar-plus-o', 'question-circle', 'meh-o', 'list', 'tasks', 'thumbs-up-o', 'sitemap', 'users', 'gg', 'rocket';
 
 @each $i in $icons {
   li.#{$i} i {
