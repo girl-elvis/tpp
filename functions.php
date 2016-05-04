@@ -15,7 +15,9 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php' // Theme customizer
+  'lib/customizer.php',  // Theme customizer
+  'lib/uikit-menu-walker.php',   // Walker class for uikit
+  //'lib/uikit-menu-walker-offcanvas.php'  // Walker class for uikit
 ];
 
 foreach ($sage_includes as $file) {
@@ -52,17 +54,56 @@ function custom_wpseo_breadcrumb_output( $output ){
         $from = '/person/';   
         $to     = '/about-us/people/';
         $output = str_replace( $from, $to, $output );
-    }
-
+    } else if(is_tax("doc_category")) {
+        $from = 'document/" rel="v:url" property="v:title">Documents';   
+        $to     = 'hr" rel="v:url" property="v:title">HR</a>';
+        $output = str_replace( $from, $to, $output );
+      }
     return $output;
 
 }
 
 
+// Give editors access to the menus but hide 'themes'
+/**
+ * @var $roleObject WP_Role
+ */
+$roleObject = get_role( 'editor' );
+if (!$roleObject->has_cap( 'edit_theme_options' ) ) {
+    $roleObject->add_cap( 'edit_theme_options' );
+}
 
-  
+function hide_menu() {
+  if ( !current_user_can ('activate_plugins') ) {
+  remove_submenu_page( 'themes.php', 'themes.php' ); // hide the theme selection submenu
+  }
+}
+
+add_action('admin_head', 'hide_menu');
 
 
+
+
+// ADD DOCS TO ARCHIVE PAGES
+add_action( 'pre_get_posts', 'add_docs_to_archive' );
+
+function add_docs_to_archive( $query ) {
+  if ( $query->is_tax('doc_category')  )
+    $query->set( 'post_type', array( 'post', 'document' ) );
+  return $query;
+}
+
+
+// Filter Category/Taxonomy title
+add_filter( 'get_the_archive_title', function ( $title ) {
+    if( is_category() ) {
+        $title = single_cat_title( '', false );
+    } else if( is_tax()) {
+      $title = single_term_title( '', false ) ;
+    }
+    return $title;
+
+});
 
 
 ?>

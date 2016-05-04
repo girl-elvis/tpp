@@ -176,6 +176,7 @@ h2::after {
 	display: block;
 	height:  5px;
 	@include gradient-horizontal-neutral;
+	.single-person .entry-content & {width: 50%;}
 }
 
 
@@ -193,12 +194,16 @@ $navbar-color:                                   $text-light;
 $navbar-link-color:                              $text-light;
 $navbar-link-hover-color:                        $text-light;
 
+
+
 $navbar-nav-height:                              40px !default;
 $navbar-nav-line-height:                         $navbar-nav-height !default;
 // $navbar-nav-padding-horizontal:                  15px !default;
 $navbar-nav-color:                               $text-light;
 // $navbar-nav-font-size:                           14px !default;
 // $navbar-nav-font-weight:                         normal !default;
+
+$navbar-nav-active-color:						$text-light;
 
 $navbar-nav-hover-background:                    $orange-crush;
 $navbar-nav-hover-color:                         $text-light;
@@ -222,6 +227,10 @@ $navbar-brand-hover-color:                       #444 !default;
 // $navbar-toggle-hover-color:                      #444 !default;
 $navbar-toggle-icon:                             "\f0c9" !default;
 $navbar-toggle-icon-alt:                         "\f002" !default;
+
+
+
+
 
 
 //%navbar-a {
@@ -277,6 +286,32 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 	border-bottom-left-radius: $radius;
 	border-top-left-radius: $radius;
 }
+
+
+
+
+// DROPDOWN STUFF
+$nav-navbar-hover-background:					$brand-primary; 
+// $dropdown-navbar-margin:                         0 !default;
+ //$dropdown-navbar-background:                     $neutral-light;
+// $dropdown-navbar-color:                          #444 !default;
+// $nav-dropdown-color:                             #444 !default;
+// $nav-dropdown-hover-background:                  $orange-crush;
+// $nav-dropdown-hover-color:                       #fff !default;
+// $nav-dropdown-header-color:                      #999 !default;
+// $nav-dropdown-divider-border:                    #ddd !default;
+// $nav-dropdown-divider-border-width:              1px !default;
+// $nav-dropdown-nested-color:                      #07D !default;
+// $nav-dropdown-nested-hover-color:                #059 !default;
+$dropdown-navbar-animation:	none;
+
+
+@mixin hook-dropdown() {
+	white-space: nowrap;
+	width: auto;
+}
+ 
+
 
 
 // @mixin hook-navbar(){
@@ -497,6 +532,7 @@ $panel-divider-border-width:                     1px !default;
 
 .uk-panel-box-secondary h3 a:hover,
 .uk-panel-box-secondary a:hover,
+.uk-panel-box-secondary .uk-panel-title a,
 .docu-content a {
 color: $text-light;
 }

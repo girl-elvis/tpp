@@ -8,7 +8,7 @@
               echo ("<h2>" . get_field("job_title") . "</h2>");
       
             if ( has_post_thumbnail() ) {
-              echo "<div class='featuredimg'>";
+              echo "<div class='featuredimg uk-align-medium-left uk-margin-large-right'>";
               the_post_thumbnail( 'cat-double' );
               echo "</div>";
             }                     ?>

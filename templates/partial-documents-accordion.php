@@ -1,5 +1,5 @@
 <?php
-// Display docs in accordian
+// Display docs in accordian NOT IN USE
 
 $custom_tax = "doc_category";
 $custom_terms = get_terms($custom_tax);

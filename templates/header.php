@@ -25,7 +25,7 @@
       </nav>
   
     </div>
-  <!-- Phone menu -->
+  <!-- END Phone menu -->
   
     <div class="uk-width-medium-1-4 uk-hidden-small"><a class="button cta uk-float-right" href="<?= esc_url(home_url('/')); ?>contact-us">Contact us</a></div></div>
     
@@ -33,13 +33,13 @@
     <nav class="nav-primary uk-navbar">
       <?php
       if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'walker' => new Walker_UIKIT()]);
       endif;
       ?>
 <!--<div class="uk-width-medium-1-4">-->
       <?php
       if (has_nav_menu('right_navigation')) :
-        wp_nav_menu(['theme_location' => 'right_navigation', 'menu_class' => 'uk-navbar-flip nav']);
+        wp_nav_menu(['theme_location' => 'right_navigation', 'menu_class' => 'uk-navbar-flip nav', 'walker' => new Walker_UIKIT()]);
       endif;
       ?>
       <!--<div class="uk-width-medium-1-4">-->
@@ -69,6 +69,7 @@ if (is_page("staff") ){ // NEED TO ADD if(royalslider exists)
     'echo' => false, 
     'container' => "",
     'items_wrap' => '%3$s', 
+    'walker' => new Walker_UIKIT()
   );  
   $menuParameters['menu'] = $menu;
     if (wp_get_nav_menu_object($menu)) {

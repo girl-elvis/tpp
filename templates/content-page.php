@@ -27,7 +27,7 @@ if (is_page("login") ){
 		wp_login_form($args);
 }
 
-if (is_page("jargon-buster") ){
+if (is_page("a-to-z-of-terms") ){
     	$post_type = "jargon";
     	include(locate_template('templates/partial-atoz.php'));
 }
@@ -44,7 +44,7 @@ if (is_page("staff") ){ // Adds Staff News to page.
  } elseif (is_page("people")){
      include(locate_template('templates/partial-people.php'));
  }elseif (is_page("hr")){
-     include(locate_template('templates/partial-documents.php'));
+     include(locate_template('templates/partial-docs.php'));
  }
   
 

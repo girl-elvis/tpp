@@ -1,7 +1,7 @@
 <?php use Roots\Sage\Titles; ?>
 
 <?php
-// Adds subnav to page header
+//Adds subnav to page header
 
 
 if (is_page("patients") || is_child( 'patients')) {
