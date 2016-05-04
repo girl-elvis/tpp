@@ -49,12 +49,12 @@ $primary-dark:	darken( $brand-primary, 1 );
 $primary-medium: lighten( $brand-primary, 5 );
 $primary-light: lighten( $brand-primary, 10 );
 
-$dark-orange: ($primary-dark url('../images/textures/diagonal-noise.png') repeat);
-$orange-crush: ($primary-medium url('../images/textures/diagonal-noise.png') repeat);
-$orange-crush-lite: ($primary-light url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush-lite: ($secondary-lighter url('../images/textures/diagonal-noise.png') repeat);
-$blue-crush-dark: ($brand-secondary url('../images/textures/diagonal-noise.png') repeat);
+$dark-orange: ($primary-dark );
+$orange-crush: ($primary-medium );
+$orange-crush-lite: ($primary-light );
+$blue-crush: ($brand-secondary );
+$blue-crush-lite: ($secondary-lighter );
+$blue-crush-dark: ($brand-secondary );
 $grey-blanket: ($neutral-light url('../images/textures/diagonal-noise.png') repeat);
 $dark-grey-blanket: ($neutral url('../images/textures/diagonal-noise.png') repeat);
 
