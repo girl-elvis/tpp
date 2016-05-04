@@ -1,0 +1,67 @@
+
+
+
+ // ==========  Mobile First Method  ==========
+ 
+	/* Custom, iPhone Retina */
+
+ 	@media only screen and (min-width : 320px){ 
+ 	.mq-logo {
+ 		background: url(../images/sm-logo.png)no-repeat;
+ 	}
+ 	
+ 	}
+ 
+	/*  Small Devices, Phones */
+	@media only screen and (min-width : 480px){ 
+	
+	}
+
+	/* medium Devices, Tablets */
+	@media only screen and (min-width : 768px){
+			.pagenav {
+			i {font-size:3em;}
+			.uk-panel.uk-grid {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+	 	}
+
+		.alignleft {
+		    float: left;
+		    //margin-right: ($line-height-computed / 2);
+		  }
+		  .alignright {
+		    float: right;
+		    //margin-left: ($line-height-computed / 2);
+		  }
+
+	 }
+
+	
+ 	
+ 	
+	/* large Devices, Desktops */
+	@media only screen and (min-width : 992px){ 
+	
+		#breadcrumbs {
+			margin: 12px;
+		}
+
+	}
+ 
+	/* XLarge Devices, Wide Screens */
+	// @media only screen and (min-width : 1200px){ 
+	
+
+	// }
+	
+	/* medium Devices, Tablets */
+	@media only screen and (max-width : 768px){
+	.banner .container:before {
+	    // content: url('../images/tpp-logo.png');
+	    display: none;
+		}
+	
+		}
+	

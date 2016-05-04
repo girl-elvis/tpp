@@ -1,0 +1,14 @@
+footer {
+
+		.cat-col:last-of-type{
+			@extend .uk-width-large-1-2;
+		}
+		section.widget {
+			@extend .uk-panel ;
+			@extend .uk-panel-box ;
+			// replace with @extend .cat-panel?
+			
+		}
+
+	
+}

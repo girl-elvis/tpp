@@ -1,0 +1,8 @@
+nav {
+	@extend .uk-navbar;
+}
+
+.nav {
+	@extend .uk-navbar-nav;
+	@extend .uk-hidden-small;
+}
