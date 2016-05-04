@@ -8,7 +8,7 @@
       <?php 
                 if ( has_post_thumbnail() ) {
                     echo "<div class='featuredimg'>";
-                        the_post_thumbnail( 'cat-double' );
+                        the_post_thumbnail( 'full' );
                         echo "</div>";
                     }                     ?>
       <?php the_content(); ?>

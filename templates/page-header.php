@@ -1,7 +1,11 @@
 <?php use Roots\Sage\Titles; ?>
 
 <?php
+<<<<<<< .merge_file_GhEuLI
 // Adds subnav to page header
+=======
+//Adds subnav to page header
+>>>>>>> .merge_file_JnE1qM
 
 
 if (is_page("patients") || is_child( 'patients')) {
