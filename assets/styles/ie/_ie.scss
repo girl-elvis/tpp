@@ -1,25 +1,39 @@
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     /* IE10 and higher CSS styles go here */
-    .uk-panel-box-primary {
-        background-color: #ee6800;
-        background-image:url(../images/textures/ie-diagonal-noise.png);
+    
+    // Background replacements as no blend mode in IE
+    
+    $navbar-nav-hover-background:                    $ie-orange-crush;
+    $navbar-nav-active-background:                   $ie-orange-crush;
+    $panel-box-secondary-background:                 $ie-orange-crush-lite;
+    $accordion-title-background-active: 			$ie-orange-crush-lite;
+    $navbar-flip-nav-hover-background:                $ie-blue-crush;
+    $panel-box-primary-background:                   $ie-blue-crush-lite;
+    $panel-box-secondary-hover-background: 			 $ie-blue-crush-lite;
+    $panel-box-primary-hover-background:             $ie-blue-crush-dark;
+    $navbar-nav-onclick-background:                  $ie-grey-blanket;
+    $panel-box-background: 							$ie-grey-blanket;
+    $accordion-title-background:                     $ie-grey-blanket;
+
+    
+    
+  #menu-right-1 {
+    	background: $ie-grey-blanket;
+   
     }
-    .uk-panel-box-secondary {
-        background-color: #ee6800;
-        background-image:url(../images/textures/ie-diagonal-noise.png);
-    }
-    .nav li, .pagenav li, footer {
-        background-color: #ee6800;
-        background-image:url(../images/textures/ie-diagonal-noise.png);
-        color: #f7f7f7;
-    }
-    #menu-right-1 li {
-        background-image:url(../images/textures/diagonal-noise.png);
-    }
-    .uk-navbar-flip>li {
-        background-color: #f3f3f3;
-    }
-}
+ #menu-right-1 > li a:hover {
+ 		background: $ie-blue-crush;
+
+ }  
+ 
+ #menu-main-navigation-1 {
+ 	background: $ie-dark-grey-blanket;
+ }
+ 
+  
+    
+    
+ }
 
 // #menu-partners h3 > a {
 //     color: #545452;

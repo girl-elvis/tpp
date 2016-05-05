@@ -1,6 +1,6 @@
 <footer class="content-info">
   
-  	<div class="strapline"><?php bloginfo('title'); ?> is <?php bloginfo('description'); ?></div>
+  	<div class="strapline"><?php bloginfo('title'); ?> is an <span class="hide-text nhs">NHS</span> Pathology provider</div>
   	<div class="container">
   	<div class="cat-grid uk-grid" data-uk-grid-match="{target:'.cat-panel'}">
     <?php dynamic_sidebar('sidebar-footer'); ?>
