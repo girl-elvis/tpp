@@ -15,9 +15,13 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
+<<<<<<< .merge_file_tCZo2D
+  'lib/customizer.php' // Theme customizer
+=======
   'lib/customizer.php',  // Theme customizer
   'lib/uikit-menu-walker.php',   // Walker class for uikit
   //'lib/uikit-menu-walker-offcanvas.php'  // Walker class for uikit
+>>>>>>> .merge_file_BMhGca
 ];
 
 foreach ($sage_includes as $file) {
@@ -54,16 +58,29 @@ function custom_wpseo_breadcrumb_output( $output ){
         $from = '/person/';   
         $to     = '/about-us/people/';
         $output = str_replace( $from, $to, $output );
+<<<<<<< .merge_file_tCZo2D
+    }
+
+=======
     } else if(is_tax("doc_category")) {
         $from = 'document/" rel="v:url" property="v:title">Documents';   
         $to     = 'hr" rel="v:url" property="v:title">HR</a>';
         $output = str_replace( $from, $to, $output );
       }
+>>>>>>> .merge_file_BMhGca
     return $output;
 
 }
 
 
+<<<<<<< .merge_file_tCZo2D
+
+  
+
+
+
+
+=======
 // Give editors access to the menus but hide 'themes'
 /**
  * @var $roleObject WP_Role
@@ -106,4 +123,5 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 });
 
 
+>>>>>>> .merge_file_BMhGca
 ?>
